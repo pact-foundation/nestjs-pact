@@ -1,9 +1,9 @@
 [![ISC license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-[![npm version](http://img.shields.io/npm/v/nestjs-pact.svg?style=flat)](https://npmjs.org/package/@ntegral/nestjs-sentry "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/nestjs-pact.svg?style=flat)](https://npmjs.org/package/nestjs-pact "View this project on npm")
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/omermorad/nestjs-pact/master.svg?style=flat-square)](https://codecov.io/gh/omer-morad-ni/nestjs-pact)
 [![CircleCI](https://circleci.com/gh/omermorad/nestjs-pact.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 
-![alt text](logo.jpg "Logo Title Text 1")
+![alt text](logo.jpg "NestJS + Pact")
 
 <p align="center">
   <h3 align="center">
@@ -11,7 +11,7 @@
   </h3>
 
   <p align="center">
-    Injectable Pact.js Consumer/Producer for NestJS
+    <strong>Injectable Pact.js Consumer/Producer for NestJS</strong>
   </p>
 </p>
 
@@ -33,13 +33,13 @@ Like the nature of Pact, this package is for testing purposes only.
 If you are not familiar with Pact, Pact is fast, easy and reliable testing framework for integrating web apps, APIs and microservices.
 Read more on [Pact official website](https://pact.io/)
 
-The package suggest two modules; one for the `Producer` role (verifying), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
-Of course you can akso use both modules and play the role of `Consumer` and `Producer` at the same time.
+This package suggests two modules; one for the `Producer` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
+Of course you can also use both modules and play the role of `Consumer` and `Producer` at the same time.
 
 ## Installation
 
 ```bash
-npm i @websolute/nestjs-pact
+npm i nestjs-pact
 ```
 
 ## Introduction
@@ -52,21 +52,178 @@ One more thing - the usage of the modules is done in tests only, which is not qu
 The obvious advantage of this package is that Pact can be used in combination with the techniques and benefits offered by NestJS.
 
 ## Getting Started
+
+**Soon we will add a full working end-to-end example to demonstrate how to Pact is working with NestJS with `nestjs-pact` package**
+
 ### Consumer
+
+In order to use the `Consumer` module, you need to follow a few simple steps, let's go over it!
+
+First, create a file called `pact.module.ts` in your `test` folder (or wherever you put your tests), and simply
+load the `PactConsumerModule` like below:
+
+**test/pact/pact.module.ts**
+
+```typescript
+import { Module } from '@nestjs/common';
+import { PactConsumerModule } from 'nestjs-pact';
+
+@Module({
+  imports: [
+    PactConsumerModule.register({ ... }),
+  ],
+})
+export class PactModule {}
+```
+
+Yay, now let's create the test file! let's call it `my-test.spec.ts`
+
+**test/pact/my-test.spec.ts**
+
+```typescript
+import { Pact } from '@pact-foundation/pact';
+import { Test } from '@nestjs/testing';
+import { PactFactory } from 'nestjs-pact';
+import { PactModule } from '@test/pact/pact.module';
+
+describe('Pact', () => {
+  let pactFactory: PactFactory;
+  let provider: Pact;
+
+  beforeAll(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [SomeOtherModule, AndAnotherModuleYouNeed, PactModule],
+    }).compile();
+
+    pactFactory = moduleRef.get(PactFactory);
+
+    provider = pactFactory.createContractBetween({
+      consumer: 'Consumer Service Name',
+      provider: 'Producer Service Name',
+    });
+
+    await provider.setup();
+  });
+
+  afterEach(() => provider.verify());
+
+  afterAll(() => provider.finalize());
+
+  describe('when something happens', () => {
+    describe('and another thing happens too', () => {
+      beforeAll(() => provider.addInteraction({ ... }));
+
+      it('should do something', () => {
+        return expect( ... );
+      });
+    });
+  });
+});
+```
+
+If you are not sure how to write the test itself, [the great end-to-end example from Pact's Github](https://github.com/pact-foundation/pact-js/tree/master/examples/e2e) would surely help!
+
+Now let's look how we can publish the pacts created from the test file to a Pact broker!
+
+**test/pact/publish-pacts.ts**
+
+```typescript
+import { NestFactory } from '@nestjs/core';
+import { Logger, LoggerService } from '@nestjs/common';
+import { Publisher } from '@pact-foundation/pact';
+import { PactModuleProviders } from 'nestjs-pact';
+import { PactModule } from '@test/pact/pact.module';
+
+(async () => {
+  const app = await NestFactory.createApplicationContext(PactModule);
+
+  const publisher: Publisher = app.get(PactModuleProviders.PactPublisher);
+  const logger: LoggerService = app.get(Logger);
+
+  if (process.env.CI !== 'true') {
+    logger.log('Skipping Pact publish as not on CI');
+    process.exit(0);
+  }
+
+  try {
+    await publisher.publishPacts();
+
+    logger.log('Pact contract publishing complete!');
+    logger.log('');
+    logger.log('Head over to https://test.pact.dius.com.au/ and login with');
+    logger.log('=> Username: dXfltyFMgNOFZAxr8io9wJ37iUpY42M');
+    logger.log('=> Password: O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1');
+    logger.log('to see your published contracts.');
+  } catch (e) {
+    logger.error('Pact contract publishing failed: ', e);
+  }
+})();
+```
+
+Run the file and you are good to go :)
+
+Note: in your 'tsconfig.json' file make sure you set `allowJs` to `true` in order to run the file
 
 ### Producer
 
-**Note: it is highly recommended to review the sample project. It makes full use of all parts of the package and illustrates how each can be used to fulfill the appropriate role in Pact's methodology**
+The usage in the `Producer` service is quite easy; In your `/test` folder (or wherever you put your tests)
+create a simple test module with NestJS `Test.createTestingModule` method and import the `PactProducerModule` module
+from `nestjs-pact`.
+
+You can use `register` or `registerAsync` method, make sure you stick to `PactProducerOptions` interface options. \
+After creating the Nest application from the testing module, pass the app instance to the `verify` method,
+it will generate a random (available) port, spin up the application and run the verifier against the application url.
+
+You can read more about Pact Verification in the [official Pact documentation](https://docs.pact.io/getting_started/verifying_pacts/)
+
+Here is a quick and simple example:
+
+```typescript
+import { Test } from '@nestjs/testing';
+import { INestApplication, Logger, LoggerService } from '@nestjs/common';
+import { PactProducerModule, PactVerifierService } from 'nestjs-pact';
+import { AppModule } from '@app/app.module';
+
+describe('Pact Verification', () => {
+  let verifierService: PactVerifierService;
+  let logger: LoggerService;
+  let app: INestApplication;
+
+  beforeAll(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [AppModule, PactProducerModule.register({ ... })],
+    }).compile();
+
+    verifierService = moduleRef.get(PactVerifierService);
+    logger = moduleRef.get(Logger);
+
+    app = moduleRef.createNestApplication();
+
+    await app.init();
+  });
+
+  it('validates the expectations of Matching Service', async () => {
+    const { output } = await verifierService.verify(app);
+
+    logger.log('Pact Verification Completed!');
+    logger.log(output);
+  });
+
+  afterAll(async () => {
+    await app.close();
+  });
+});
+```
 
 ## Contributing
 
-If you want to contribute to the project, I will be more than happy! \
+If you want to contribute to the project, I will be more than happy :) \
 Take a few minutes to review the project code, and start get your hands dirty.
 
 It is important to note the following steps beforehand:
 
 1. Fork the repository
-2. Create your branch in the form of <bug|feature>/<semver-path>/<description> (`git checkout -b feature/minor/add-something`)
+2. Create your branch in the form of `<bug|feature>/<semver-path>/<description>` (`git checkout -b feature/minor/add-something`)
 3. Commit the changes to your branch
 4. Push your changes to your remote branch
 5. Open a pull request
