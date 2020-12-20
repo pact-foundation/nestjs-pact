@@ -1,0 +1,98 @@
+{
+  "name": "nestjs-pact",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Injectable Pact.js Consumer/Producer for NestJS",
+  "keywords": [
+    "nest",
+    "nestjs",
+    "pact",
+    "pactjs",
+    "nestjs-pact",
+    "cdc"
+  ],
+  "contributors": [
+    {
+      "name": "Omer Morad",
+      "email": "omer.moradd@gmail.com"
+    },
+    {
+      "name": "Idan Ptichi",
+      "email": "idan.ptichi@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omermorad/nestjs-pact"
+  },
+  "bugs": {
+    "url": "https://github.com/omermorad/nestjs-pact/issues"
+  },
+  "readme": "https://github.com/omermorad/nestjs-pact/README.md",
+  "scripts": {
+    "prebuild": "./node_modules/.bin/rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "watch": "tsc -p tsconfig.build.json --watch",
+    "test": "npm run lint && jest --config jest.config.json --runInBand --verbose",
+    "test:ci": "npm run lint && jest --config jest.config.json --runInBand --coverage --collectCoverage=true --reporters=jest-junit",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' --fix"
+  },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "index.js",
+    "README.md"
+  ],
+  "dependencies": {
+    "get-port": "^5.1.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.3"
+  },
+  "peerDependencies": {
+    "@pact-foundation/pact": "^9.13.0",
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "get-port": "^5.1.1",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^7.6.1",
+    "@nestjs/core": "^7.6.1",
+    "@nestjs/testing": "^7.6.3",
+    "@pact-foundation/pact": "^9.13.0",
+    "@types/get-port": "^4.2.0",
+    "@types/jest": "24.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jest": "^23.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.3.5",
+    "jest": "24.9.0",
+    "jest-junit": "12.0.0",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.0",
+    "ts-jest": "24.1.0",
+    "ts-loader": "^6.2.2",
+    "ts-node": "8.10.2",
+    "tsconfig-paths": "^3.9.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^3.9.7"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --ext .ts --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  }
+}
