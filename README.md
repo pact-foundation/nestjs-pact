@@ -3,9 +3,11 @@
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/omermorad/nestjs-pact/master.svg?style=flat-square)](https://codecov.io/gh/omer-morad-ni/nestjs-pact)
 [![CircleCI](https://circleci.com/gh/omermorad/nestjs-pact.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 
+![alt text](logo.jpg "Logo Title Text 1")
+
 <p align="center">
   <h3 align="center">
-    @websolute/nestjs-pact
+    NestJS + Pact
   </h3>
 
   <p align="center">
