@@ -1,6 +1,6 @@
 {
   "name": "nestjs-pact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Injectable Pact.js Consumer/Producer for NestJS",
   "keywords": [
@@ -18,7 +18,7 @@
     },
     {
       "name": "Idan Ptichi",
-      "email": "idan.ptichi@gmail.com"
+      "email": "idanp@gmail.com"
     }
   ],
   "repository": {
