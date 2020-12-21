@@ -27,19 +27,19 @@
 
 ## About
 
-This package allows you to consume Pact.js in a way that can be used very easily in NestJS. \
+This package enables you to consume Pact.js in a way that can be used very easily in NestJS. \
 Like the nature of Pact, this package is for testing purposes only.
 
 If you are not familiar with Pact, Pact is fast, easy and reliable testing framework for integrating web apps, APIs and microservices.
 Read more on [Pact official website](https://pact.io/)
 
-This package suggests two modules; one for the `Producer` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
+There are two main modules suggested; one for the `Producer` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
 Of course you can also use both modules and play the role of `Consumer` and `Producer` at the same time.
 
 ## Installation
 
 ```bash
-npm i nestjs-pact
+npm i -D nestjs-pact
 ```
 
 ## Introduction
@@ -160,9 +160,11 @@ import { PactModule } from '@test/pact/pact.module';
 })();
 ```
 
+`npx ts-node test/pact/publish-pacts.ts`
+
 Run the file and you are good to go :)
 
-Note: in your 'tsconfig.json' file make sure you set `allowJs` to `true` in order to run the file
+Note: in your `tsconfig.json` file make sure you set `allowJs` to `true` in order to run the file
 
 ### Producer
 
