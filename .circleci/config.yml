@@ -10,20 +10,6 @@ defaults: &defaults
     - image: circleci/node:erbium
 
 jobs:
-  validate-branch:
-    <<: *defaults
-
-    steps:
-      - run:
-          name: Validate Branch Name
-          command: >
-            if [[ "$CIRCLE_BRANCH" =~ ^(feature|bug)\/(patch|minor|major)\/[a-z0-9-]+$ ]];
-            then
-              echo "Branch name is valid";
-            else
-              echo "Invalid branch name" && exit 1;
-            fi
-
   install:
     <<: *defaults
 
@@ -85,35 +71,22 @@ jobs:
           root: ~/repo
           paths: .
 
-  publish:
+  release:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
 
       - run:
-          name: Authenticate With NPM Registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-
-      - run:
-          name: Publish
-          command: npm publish --access=public
+          name: Semantic Release
+          command: npx semantic-release
 
 workflows:
   version: 2.1
 
-  test-and-publish:
+  test-and-release:
     jobs:
-      - validate-branch:
-          filters:
-            branches:
-              ignore:
-                - master
-
-      - install:
-          filters:
-            branches:
-              only: /master|((feature|bug)\/(patch|minor|major)\/[a-z0-9-]+)/
+      - install
 
       - test:
           requires:
@@ -132,7 +105,7 @@ workflows:
             branches:
               only: master
 
-      - publish:
+      - release:
           requires:
             - approve
           filters:
