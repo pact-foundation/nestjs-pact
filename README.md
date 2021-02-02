@@ -18,13 +18,25 @@
 
 ## Table Of Contents
 
-- [About](#about)
 - [Installation](#installation)
+- [Installation](#end-to-end-example)
+- [About](#about)
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
+
+
+## Installation
+
+```bash
+npm i -D nestjs-pact @pact-foundation/pact
+```
+
+## End to End Example
+If you want to see a fully working end-to-end example with NestJS and Pact I recommend you to
+[jump to the NestJS official examples at the PactJS Github repository](https://github.com/pact-foundation/pact-js/tree/master/examples)
 
 ## About
 
@@ -36,12 +48,6 @@ Read more on [Pact official website](https://pact.io/)
 
 There are two main modules suggested; one for the `Provider` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
 Of course you can also use both modules and play the role of `Consumer` and `Provider` at the same time.
-
-## Installation
-
-```bash
-npm i -D nestjs-pact
-```
 
 ## Introduction
 
@@ -121,8 +127,6 @@ describe('Pact', () => {
   });
 });
 ```
-
-If you are not sure how to write the test itself, [the great end-to-end example from Pact's Github](https://github.com/pact-foundation/pact-js/tree/master/examples/e2e) would surely help!
 
 Now let's look how we can publish the pacts created from the test file to a Pact broker!
 
