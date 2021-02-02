@@ -28,7 +28,7 @@ describe('PactVerifierService', () => {
           useClass: VerifierMock,
         },
         {
-          provide: PactModuleProviders.ProducerOptions,
+          provide: PactModuleProviders.ProviderOptions,
           useValue: options,
         },
       ],
