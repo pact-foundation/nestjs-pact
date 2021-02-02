@@ -12,7 +12,7 @@
   </h3>
 
   <p align="center">
-    <strong>Injectable Pact.js Consumer/Producer for NestJS</strong>
+    <strong>Injectable Pact.js Consumer/Provider for NestJS</strong>
   </p>
 </p>
 
@@ -34,8 +34,8 @@ Like the nature of Pact, this package is for testing purposes only.
 If you are not familiar with Pact, Pact is fast, easy and reliable testing framework for integrating web apps, APIs and microservices.
 Read more on [Pact official website](https://pact.io/)
 
-There are two main modules suggested; one for the `Producer` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
-Of course you can also use both modules and play the role of `Consumer` and `Producer` at the same time.
+There are two main modules suggested; one for the `Provider` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
+Of course you can also use both modules and play the role of `Consumer` and `Provider` at the same time.
 
 ## Installation
 
@@ -100,7 +100,7 @@ describe('Pact', () => {
 
     provider = pactFactory.createContractBetween({
       consumer: 'Consumer Service Name',
-      provider: 'Producer Service Name',
+      provider: 'Provider Service Name',
     });
 
     await provider.setup();
@@ -167,13 +167,13 @@ Run the file and you are good to go :)
 
 Note: in your `tsconfig.json` file make sure you set `allowJs` to `true` in order to run the file
 
-### Producer
+### Provider
 
-The usage in the `Producer` service is quite easy; In your `/test` folder (or wherever you put your tests)
-create a simple test module with NestJS `Test.createTestingModule` method and import the `PactProducerModule` module
+The usage in the `Provider` service is quite easy; In your `/test` folder (or wherever you put your tests)
+create a simple test module with NestJS `Test.createTestingModule` method and import the `PactProviderModule` module
 from `nestjs-pact`.
 
-You can use `register` or `registerAsync` method, make sure you stick to `PactProducerOptions` interface options. \
+You can use `register` or `registerAsync` method, make sure you stick to `PactProviderOptions` interface options. \
 After creating the Nest application from the testing module, pass the app instance to the `verify` method,
 it will generate a random (available) port, spin up the application and run the verifier against the application url.
 
@@ -184,7 +184,7 @@ Here is a quick and simple example:
 ```typescript
 import { Test } from '@nestjs/testing';
 import { INestApplication, Logger, LoggerService } from '@nestjs/common';
-import { PactProducerModule, PactVerifierService } from 'nestjs-pact';
+import { PactProviderModule, PactVerifierService } from 'nestjs-pact';
 import { AppModule } from '@app/app.module';
 
 describe('Pact Verification', () => {
@@ -194,7 +194,7 @@ describe('Pact Verification', () => {
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
-      imports: [AppModule, PactProducerModule.register({ ... })],
+      imports: [AppModule, PactProviderModule.register({ ... })],
     }).compile();
 
     verifierService = moduleRef.get(PactVerifierService);
@@ -217,19 +217,6 @@ describe('Pact Verification', () => {
   });
 });
 ```
-
-## Contributing
-
-If you want to contribute to the project, I will be more than happy :) \
-Take a few minutes to review the project code, and start get your hands dirty.
-
-It is important to note the following steps beforehand:
-
-1. Fork the repository
-2. Create your branch in the form of `<bug|feature>/<semver-path>/<description>` (`git checkout -b feature/minor/add-something`)
-3. Commit the changes to your branch
-4. Push your changes to your remote branch
-5. Open a pull request
 
 ## License
 

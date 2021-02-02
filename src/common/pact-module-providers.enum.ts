@@ -1,6 +1,6 @@
 export enum PactModuleProviders {
   ConsumerOptions = 'CONSUMER_OPTIONS',
-  ProducerOptions = 'PRODUCER_OPTIONS',
+  ProviderOptions = 'PROVIDER_OPTIONS',
   PublicationOptions = 'PUBLICATION_OPTIONS',
   PactPublisher = 'PACT_PUBLISHER',
   PactVerifier = 'PACT_VERIFIER',

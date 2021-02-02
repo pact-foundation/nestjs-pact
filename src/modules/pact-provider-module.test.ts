@@ -1,13 +1,13 @@
 import { Test } from '@nestjs/testing';
-import { PactProducerModule } from './pact-producer.module';
-import { PactProducerOptions, PactProducerOptionsFactory } from '../interfaces/pact-producer-module-options.interface';
+import { PactProviderModule } from './pact-provider.module';
+import { PactProviderOptions, PactProviderOptionsFactory } from '../interfaces/pact-provider-module-options.interface';
 import { PactVerifierService } from '../services/pact-verifier.service';
 
-describe("Given a 'PactProducerModule' module", () => {
+describe("Given a 'PactProviderModule' module", () => {
   const config = {};
 
-  class PactProducerConfigTestService implements PactProducerOptionsFactory {
-    createPactProducerOptions(): PactProducerOptions {
+  class PactProviderConfigTestService implements PactProviderOptionsFactory {
+    createPactProviderOptions(): PactProviderOptions {
       return config;
     }
   }
@@ -15,7 +15,7 @@ describe("Given a 'PactProducerModule' module", () => {
   describe("when calling the 'register' method", () => {
     test('then provide Pact Verifier service', async () => {
       const moduleRef = await Test.createTestingModule({
-        imports: [PactProducerModule.register(config)],
+        imports: [PactProviderModule.register(config)],
       }).compile();
 
       const pactVerifierService = moduleRef.get(PactVerifierService);
@@ -28,7 +28,7 @@ describe("Given a 'PactProducerModule' module", () => {
       test('then provide Pact Verifier service', async () => {
         const moduleRef = await Test.createTestingModule({
           imports: [
-            PactProducerModule.registerAsync({
+            PactProviderModule.registerAsync({
               useFactory: () => config,
             }),
           ],
@@ -43,8 +43,8 @@ describe("Given a 'PactProducerModule' module", () => {
       test('then provide Pact Verifier service', async () => {
         const moduleRef = await Test.createTestingModule({
           imports: [
-            PactProducerModule.registerAsync({
-              useClass: PactProducerConfigTestService,
+            PactProviderModule.registerAsync({
+              useClass: PactProviderConfigTestService,
             }),
           ],
         }).compile();

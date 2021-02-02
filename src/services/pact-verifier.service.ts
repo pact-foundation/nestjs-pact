@@ -2,12 +2,12 @@ import getPort from 'get-port';
 import { INestApplication, Inject, Injectable } from '@nestjs/common';
 import { Verifier } from '@pact-foundation/pact';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
-import { PactProducerOptions } from '../interfaces/pact-producer-module-options.interface';
+import { PactProviderOptions } from '../interfaces/pact-provider-module-options.interface';
 
 @Injectable()
 export class PactVerifierService {
   public constructor(
-    @Inject(PactModuleProviders.ProducerOptions) private readonly options: PactProducerOptions,
+    @Inject(PactModuleProviders.ProviderOptions) private readonly options: PactProviderOptions,
     @Inject(PactModuleProviders.PactVerifier) private readonly verifier: Verifier
   ) {}
 
