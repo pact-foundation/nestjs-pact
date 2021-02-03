@@ -20,7 +20,7 @@
 ## Table Of Contents
 
 - [Installation](#installation)
-- [Installation](#end-to-end-example)
+- [Fully Working Example](#fully-working-example)
 - [About](#about)
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
@@ -35,7 +35,7 @@
 npm i -D nestjs-pact @pact-foundation/pact
 ```
 
-## End to End Example
+## Fully Working Example
 If you want to see a fully working end-to-end example with NestJS and Pact I recommend you to
 [jump to the NestJS official examples at the PactJS Github repository](https://github.com/pact-foundation/pact-js/tree/master/examples)
 
