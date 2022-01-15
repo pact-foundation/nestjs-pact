@@ -20,10 +20,9 @@
 ## Table Of Contents
 
 - [Installation](#installation)
-- [Fully Working Example](#fully-working-example)
+- [Example](#example)
 - [About](#about)
 - [Introduction](#introduction)
-- [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -35,7 +34,7 @@
 npm i -D nestjs-pact @pact-foundation/pact
 ```
 
-## Fully Working Example
+## Example
 If you want to see a fully working end-to-end example with NestJS and Pact I recommend you to
 [jump to the NestJS official examples at the PactJS Github repository](https://github.com/pact-foundation/pact-js/tree/master/examples)
 
@@ -48,7 +47,7 @@ If you are not familiar with Pact, Pact is fast, easy and reliable testing frame
 Read more on [Pact official website](https://pact.io/)
 
 There are two main modules suggested; one for the `Provider` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
-Of course you can also use both modules and play the role of `Consumer` and `Provider` at the same time.
+Of course, you can also use both modules and play the role of `Consumer` and `Provider` at the same time.
 
 ## Introduction
 
@@ -56,12 +55,8 @@ The use of each of the modules suggested here, is made in the common and accepte
 The simplest way is to use the `register` method and pass the settings directly.
 It is also enable to use the `registerAsync` method to pass the settings in the form of `useFactory` or `useClass` for example.
 
-One more thing - the usage of the modules is done in tests only, which is not quite common in the use of NestJS modules, so there are some good examples down below.
+One more thing - the usage of the modules is for testing purposes only, which is not quite common in the use of NestJS modules, so there are some good examples down below.
 The obvious advantage of this package is that Pact can be used in combination with the techniques and benefits offered by NestJS.
-
-## Getting Started
-
-**Soon we will add a full working end-to-end example to demonstrate how to Pact is working with NestJS with `nestjs-pact` package**
 
 ### Consumer
 
