@@ -1,10 +1,14 @@
-# [2.0.0](https://github.com/omermorad/nestjs-pact/compare/v1.0.4...v2.0.0) (2021-02-02)
+# [2.1.0](https://github.com/omermorad/nestjs-pact/compare/v1.0.4...v2.1.0) (2022-01-18)
 
+### Code Refactoring
+
+* deps: support nestjs version 8.x.x ([#9](https://github.com/omermorad/nestjs-pact/pull/9)) ([fdf1af1](https://github.com/omermorad/nestjs-pact/commit/86c4f19231b6d7e36163448be9b835225727d049))
+
+# [2.0.0](https://github.com/omermorad/nestjs-pact/compare/v1.0.4...v2.0.0) (2021-02-02)
 
 ### Code Refactoring
 
 * **names:** change the name of the producer module to provider ([#6](https://github.com/omermorad/nestjs-pact/issues/6)) ([fdf1af1](https://github.com/omermorad/nestjs-pact/commit/fdf1af1aec891ddfbd81702fd4e352a2d8db8c66))
-
 
 ### BREAKING CHANGES
 
