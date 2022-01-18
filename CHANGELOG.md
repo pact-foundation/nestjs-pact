@@ -1,3 +1,9 @@
+# [2.1.1](https://github.com/omermorad/nestjs-pact/compare/v2.1.0...v2.1.1) (2022-01-18)
+
+### Fix
+
+* fix: get-port dependency ([#10](https://github.com/omermorad/nestjs-pact/pull/10)) ([fdf1af1](https://github.com/omermorad/nestjs-pact/commit/9988378dfa77e2de68b7e9d52adc8c847045b8c7))
+
 # [2.1.0](https://github.com/omermorad/nestjs-pact/compare/v1.0.4...v2.1.0) (2022-01-18)
 
 ### Code Refactoring
