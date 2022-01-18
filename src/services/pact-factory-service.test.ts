@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Pact } from '@pact-foundation/pact';
+import { PactFactory } from './pact-factory.service';
 import { PactConsumerOptions } from '../interfaces/pact-consumer-module-options.interface';
-import { PactFactory } from '../services/pact-factory.service';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
 jest.mock('@pact-foundation/pact');
@@ -21,8 +21,6 @@ describe('PactFactory', () => {
   } as PactConsumerOptions;
 
   beforeAll(async () => {
-    // ((Pact as unknown) as jest.Mock<Pact>).mockClear();
-
     moduleRef = await Test.createTestingModule({
       providers: [PactFactory, { provide: PactModuleProviders.ConsumerOptions, useValue: consumerOptions }],
     }).compile();

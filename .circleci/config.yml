@@ -18,12 +18,12 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}
             - v1-dependencies-
 
       - run:
           name: Install
-          command: npm ci
+          command: yarn install --frozen-lockfile
 
       - persist_to_workspace:
           root: ~/repo
@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: Test
-          command: npm run test:ci
+          command: yarn test:ci
           environment:
             JEST_JUNIT_OUTPUT_DIR: ./coverage
 
@@ -53,7 +53,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
 
   build:
     <<: *defaults
@@ -63,7 +63,7 @@ jobs:
 
       - run:
           name: Build
-          command: npm run build
+          command: yarn build
           environment:
             NODE_ENV: 'test'
 
@@ -79,7 +79,7 @@ jobs:
 
       - run:
           name: Semantic Release
-          command: npx semantic-release
+          command: yarn semantic-release
 
 workflows:
   version: 2.1
