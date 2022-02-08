@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { PactVerifierService } from '../services/pact-verifier.service';
 
+jest.mock('get-port', () => () => 80);
+
 describe('PactVerifierService', () => {
   let moduleRef: TestingModule;
   let pactVerifierProvider;
@@ -17,7 +19,7 @@ describe('PactVerifierService', () => {
     close: jest.fn().mockResolvedValueOnce(true),
   };
 
-  const options = { some: true, keys: true, to: true, check: true };
+  let options = { some: true, keys: true, to: true, check: true, providerHost: '0.0.0.0' } as any;
 
   beforeAll(async () => {
     moduleRef = await Test.createTestingModule({
@@ -36,6 +38,16 @@ describe('PactVerifierService', () => {
 
     pactVerifierService = moduleRef.get<PactVerifierService>(PactVerifierService);
     pactVerifierProvider = moduleRef.get(PactModuleProviders.PactVerifier);
+  });
+
+  describe('when configuring the providerBaseHost', () => {
+    beforeEach(async () => {
+      options = { ...options, providerHost: '0.0.0.0' };
+      await pactVerifierService.verify(appMock as any);
+    });
+    test('allows configuring hosts', async () => {
+      expect(appMock.listen).toHaveBeenCalledWith(80, '0.0.0.0');
+    });
   });
 
   describe("When calling the 'verify' method", () => {
