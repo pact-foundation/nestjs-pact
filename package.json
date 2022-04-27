@@ -31,7 +31,6 @@
   },
   "readme": "https://github.com/omermorad/nestjs-pact/README.md",
   "scripts": {
-    "prepare": "husky install",
     "build": "lerna run build",
     "watch": "lerna exec -- watch",
     "test": "jest --runInBand && yarn test:sample",
