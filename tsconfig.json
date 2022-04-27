@@ -2,13 +2,11 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
-    "removeComments": true,
+    "removeComments": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2017",
+    "target": "es2018",
     "sourceMap": true,
-    "baseUrl": "./",
-    "outDir": "./dist",
     "incremental": false,
     "noImplicitAny": false,
     "strictNullChecks": false,
@@ -17,7 +15,7 @@
     "resolveJsonModule": true,
     "types": [
       "node",
-      "jest"
+      "jest",
     ],
     "allowJs": true,
     "lib": [
@@ -27,11 +25,10 @@
     "allowSyntheticDefaultImports": true
   },
   "exclude": [
-    "index.ts",
-    "node_modules",
-    "dist",
-    "test",
-    "env",
-    "coverage"
+    "jest.config.base.js",
+    "jest.config.js",
+    "**/node_modules",
+    "**/dist",
+    "**/sample"
   ]
 }

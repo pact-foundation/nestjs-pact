@@ -1,0 +1,43 @@
+{
+  "name": "@nestjs-pact/consumer",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "NestJS Pact Consumer",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "contributors": [
+    {
+      "name": "Omer Morad",
+      "email": "omer.moradd@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omermorad/mockingbird.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omermorad/mockingbird/issues"
+  },
+  "readme": "https://github.com/omermorad/mockingbird/tree/refactor/master/packages/common/README.md",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "exit 0;",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' --fix"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "peerDependencies": {
+    "@nestjs/common": "7.x || 8.x",
+    "@nestjs/core": "7.x || 8.x",
+    "@pact-foundation/pact": "^9.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
