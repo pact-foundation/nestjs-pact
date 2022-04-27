@@ -1,6 +1,6 @@
 {
   "name": "@nestjs-pact/provider",
-  "version": "0.0.0",
+  "version": "0.0.1-dev.0",
   "license": "MIT",
   "description": "NestJS Pact Provider",
   "types": "dist/index.d.ts",

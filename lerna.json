@@ -1,18 +1,26 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1-dev.0",
   "command": {
     "publish": {
-      "allowBranch": ["master", "next"],
+      "allowBranch": [
+        "master",
+        "next"
+      ],
       "message": "chore(packages): release packages [skip ci]",
       "conventionalCommits": true
     },
     "version": {
-      "allowBranch": ["master", "next"],
+      "allowBranch": [
+        "master",
+        "next"
+      ],
       "message": "chore(packages): version packages [skip ci]",
       "conventionalCommits": true
     }
   },
-  "ignoreChanges": ["sample"],
+  "ignoreChanges": [
+    "sample"
+  ],
   "useWorkspaces": true,
   "npmClient": "yarn",
   "packages": [
