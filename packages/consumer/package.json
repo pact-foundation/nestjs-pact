@@ -5,6 +5,7 @@
   "description": "NestJS Pact Consumer",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
+  "type": "module",
   "contributors": [
     {
       "name": "Omer Morad",

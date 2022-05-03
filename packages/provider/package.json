@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "NestJS Pact Provider",
   "types": "dist/index.d.ts",
+  "type": "module",
   "main": "dist/index.js",
   "contributors": [
     {
