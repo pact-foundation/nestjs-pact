@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PactModuleProviders } from '../interfaces/pact-module-providers.enum';
-import { PactVerifierService } from '../services/pact-verifier.service';
+import { PactVerifierService } from './pact-verifier.service';
 
 describe('PactVerifierService', () => {
   let moduleRef: TestingModule;
