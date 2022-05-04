@@ -11,13 +11,6 @@ jobs:
       matrix:
         node-version: [12.x, 14.x,  16.x]
     steps:
-      - name: Lint Commit Message
-        run: |
-          mkdir commit-lint && cd commit-lint
-          yarn init -y
-          yarn add @commitlint/config-conventional
-          echo $(git log -1 --pretty=format:"%s") | yarn commitlint
-
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
