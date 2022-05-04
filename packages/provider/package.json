@@ -4,7 +4,6 @@
   "license": "MIT",
   "description": "NestJS Pact Provider",
   "types": "dist/index.d.ts",
-  "type": "module",
   "main": "dist/index.js",
   "contributors": [
     {
@@ -33,6 +32,9 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "dependencies": {
+    "get-port": "^4.2.0"
+  },
   "peerDependencies": {
     "@nestjs/common": "7.x || 8.x",
     "@nestjs/core": "7.x || 8.x",
@@ -40,8 +42,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "get-port": "^6.1.2"
   }
 }
