@@ -1,0 +1,60 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  main:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Lint Commit Message
+        working-directory: commit-lint
+        run: |
+          yarn init -y
+          yarn add -D @commitlint/config-conventional
+          echo $(git log -1 --pretty=format:"%s") | yarn commitlint
+
+      - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            @nestjs-pact:registry=https://registry.npmjs.org/
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            FirstName LastName (omer.mroadd@gmail.com, omer.mroadd@gmail.com)=true
+            email=omer.mroadd@gmail.com
+            always-auth=true
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Setup Node.js 12.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Bootstrap Packages
+        run: yarn lerna bootstrap
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
+
+      - name: Release
+        id: changesets
+        uses: changesets/action@master
+        with:
+          publish: yarn lerna publish from-package --yes
+          commit: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

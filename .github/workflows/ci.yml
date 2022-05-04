@@ -1,0 +1,47 @@
+name: Continuous Integration
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  main:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x,  16.x]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Lint Commit Message
+        run: |
+          yarn add -D @commitlint/config-conventional
+          echo $(git log -1 --pretty=format:"%s") | yarn commitlint
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            @nestjs-pact:registry=https://registry.npmjs.org/
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Bootstrap Packages
+        run: yarn lerna bootstrap
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
