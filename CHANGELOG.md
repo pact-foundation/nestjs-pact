@@ -1,3 +1,9 @@
+# [2.2.1](https://github.com/omermorad/nestjs-pact/compare/v2.1.1...v2.2.1) (2022-07-12)
+
+### Feat
+
+* feat: allow configuration of host ([#13](https://github.com/pact-foundation/nestjs-pact/pull/13)) ([01151f3](https://github.com/pact-foundation/nestjs-pact/commit/01151f3fc6613afa2aa0bf0d4155cbd91205b660))
+
 # [2.1.1](https://github.com/omermorad/nestjs-pact/compare/v2.1.0...v2.1.1) (2022-01-18)
 
 ### Fix
