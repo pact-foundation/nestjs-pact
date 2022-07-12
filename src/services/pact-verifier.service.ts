@@ -12,7 +12,8 @@ export class PactVerifierService {
   ) {}
 
   public async verify(app: INestApplication): Promise<any> {
-    await app.listen(await getPort());
+    const host = this.options.providerHost || 'localhost';
+    await app.listen(await getPort(), host);
 
     const appUrl = await app.getUrl();
 
