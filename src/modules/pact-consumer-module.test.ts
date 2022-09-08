@@ -14,7 +14,7 @@ describe("Given a 'PactConsumerModule' module", () => {
       port: 90210,
     },
     publication: {
-      pactFilesOrDirs: [],
+      pactFilesOrDirs: ['./'],
       pactBroker: 'snoop-dog',
       consumerVersion: 'california-2.0',
     },

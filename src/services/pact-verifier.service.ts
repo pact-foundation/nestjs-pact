@@ -6,28 +6,30 @@ import { PactProviderOptions } from '../interfaces/pact-provider-module-options.
 
 @Injectable()
 export class PactVerifierService {
-  public constructor(
-    @Inject(PactModuleProviders.ProviderOptions) private readonly options: PactProviderOptions,
-    @Inject(PactModuleProviders.PactVerifier) private readonly verifier: Verifier
-  ) {}
+  private verifier: Verifier;
+
+  public constructor(@Inject(PactModuleProviders.ProviderOptions) private readonly options: PactProviderOptions) {}
 
   public async verify(app: INestApplication): Promise<any> {
     const host = this.options.providerHost || 'localhost';
+
     await app.listen(await getPort(), host);
 
     const appUrl = await app.getUrl();
 
-    const results = await this.verifier.verifyProvider({
-      ...this.options,
+    this.verifier = new Verifier({
       providerBaseUrl: appUrl,
+      ...this.options,
     });
+
+    const results = await this.verifier.verifyProvider();
 
     await app.close();
 
     return results;
   }
 
-  public getVerifier(): Verifier {
+  public getVerifier() {
     return this.verifier;
   }
 }
