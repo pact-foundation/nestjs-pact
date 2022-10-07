@@ -1,4 +1,4 @@
-import { DynamicModule, Module, Provider, Type } from '@nestjs/common';
+import { ClassProvider, DynamicModule, Module, Provider, Type } from '@nestjs/common';
 import {
   PactConsumerModuleAsyncOptions,
   PactConsumerOptionsFactory,
@@ -44,7 +44,7 @@ export class PactConsumerCoreModule {
       {
         provide: useClass,
         useClass,
-      },
+      } as ClassProvider,
     ];
   }
 
