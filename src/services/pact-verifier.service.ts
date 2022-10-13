@@ -16,14 +16,15 @@ export class PactVerifierService {
 
     await app.listen(providerUrl.port || 80, providerUrl.hostname);
 
+    // we need the try-catch here because the verifier will throw an error
+    // and the application will not close if the error is not caught
     try {
       results = await this.verifier.verifyProvider();
     } catch (e) {
       // do nothing
-    } finally {
-      await app.close();
     }
 
+    await app.close();
     return results;
   }
 
