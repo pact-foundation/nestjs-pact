@@ -5,26 +5,24 @@ import { PactProviderOptions } from '../interfaces/pact-provider-module-options.
 
 @Injectable()
 export class PactVerifierService {
-  private verifier: Verifier | undefined = undefined;
-
-  public constructor(@Inject(PactModuleProviders.ProviderOptions) private readonly options: PactProviderOptions) {}
+  public constructor(
+    @Inject(PactModuleProviders.PactVerifier) private readonly verifier: Verifier,
+    @Inject(PactModuleProviders.ProviderOptions) private readonly options: PactProviderOptions
+  ) {}
 
   public async verify(app: INestApplication): Promise<any> {
-    const host = this.options.providerHost || 'localhost';
-    const port = this.options.providerPort || 9123;
+    const providerUrl = new URL(this.options.providerBaseUrl);
+    let results: string;
 
-    await app.listen(port, host);
+    await app.listen(providerUrl.port || 80, providerUrl.hostname);
 
-    const appUrl = await app.getUrl();
-
-    this.verifier = new Verifier({
-      providerBaseUrl: appUrl,
-      ...this.options,
-    });
-
-    const results = await this.verifier.verifyProvider();
-
-    await app.close();
+    try {
+      results = await this.verifier.verifyProvider();
+    } catch (e) {
+      // do nothing
+    } finally {
+      await app.close();
+    }
 
     return results;
   }

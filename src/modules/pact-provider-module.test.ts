@@ -4,7 +4,9 @@ import { PactProviderOptions, PactProviderOptionsFactory } from '../interfaces/p
 import { PactVerifierService } from '../services/pact-verifier.service';
 
 describe("Given a 'PactProviderModule' module", () => {
-  const config = {};
+  const config: PactProviderOptions = {
+    providerBaseUrl: 'http://127.0.0.1:80',
+  };
 
   class PactProviderConfigTestService implements PactProviderOptionsFactory {
     createPactProviderOptions(): PactProviderOptions {

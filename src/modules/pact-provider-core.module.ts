@@ -7,6 +7,7 @@ import {
 import { PactVerifierService } from '../services/pact-verifier.service';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { ProviderFactory } from '../common/provider-factory';
+import { PactVerifierProvider } from '../providers/pact-verifier.provider';
 
 @Module({})
 export class PactProviderCoreModule {
@@ -15,17 +16,17 @@ export class PactProviderCoreModule {
 
     return {
       module: PactProviderCoreModule,
-      exports: [PactVerifierService],
-      providers: [optionsProvider, PactVerifierService],
+      exports: [PactVerifierService, PactVerifierProvider],
+      providers: [optionsProvider, PactVerifierService, PactVerifierProvider],
     };
   }
 
   public static registerAsync(options: PactProviderModuleAsyncOptions): DynamicModule {
     return {
-      exports: [PactVerifierService],
+      exports: [PactVerifierService, PactVerifierProvider],
       imports: options.imports,
       module: PactProviderCoreModule,
-      providers: [...this.createAsyncProviders(options), PactVerifierService],
+      providers: [...this.createAsyncProviders(options), PactVerifierService, PactVerifierProvider],
     };
   }
 

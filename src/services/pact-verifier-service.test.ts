@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { PactVerifierService } from './pact-verifier.service';
 import { INestApplication } from '@nestjs/common';
+import { Verifier } from '@pact-foundation/pact';
+import { PactProviderOptions } from '../interfaces/pact-provider-module-options.interface';
 
 jest.mock('get-port', () => () => 80);
 
@@ -10,13 +12,18 @@ describe('PactVerifierService', () => {
   let pactVerifierService: PactVerifierService;
 
   const appMock = jest.createMockFromModule<INestApplication>('');
+  const pactVerifierMock = jest.createMockFromModule<Verifier>('');
 
-  let options = { some: true, keys: true, to: true, check: true, providerHost: '0.0.0.0' } as any;
+  let options: PactProviderOptions = { providerBaseUrl: 'http://127.0.0.1:80' };
 
   beforeAll(async () => {
     moduleRef = await Test.createTestingModule({
       providers: [
         PactVerifierService,
+        {
+          provide: PactModuleProviders.PactVerifier,
+          useValue: pactVerifierMock,
+        },
         {
           provide: PactModuleProviders.ProviderOptions,
           useValue: options,
@@ -37,11 +44,11 @@ describe('PactVerifierService', () => {
 
   describe('when configuring the providerBaseHost', () => {
     beforeEach(async () => {
-      options = { ...options, providerHost: '0.0.0.0' };
+      options = { ...options, providerBaseUrl: 'http://127.0.0.1:80' };
       await pactVerifierService.verify(appMock);
     });
     test('allows configuring hosts', async () => {
-      expect(appMock.listen).toHaveBeenCalledWith(80, '0.0.0.0');
+      expect(appMock.listen).toHaveBeenCalledWith(80, '127.0.0.1');
     });
     test('then call the application methods', () => {
       expect(appMock.close).toHaveBeenCalled();
