@@ -8,6 +8,7 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node-version: [12.x, 14.x,  16.x]
     steps:
@@ -34,9 +35,6 @@ jobs:
 
       - name: Install Dependencies
         run: yarn
-
-      - name: Bootstrap Packages
-        run: yarn lerna bootstrap
 
       - name: Build
         run: yarn build
