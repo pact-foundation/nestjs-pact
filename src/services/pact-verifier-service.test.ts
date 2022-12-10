@@ -37,6 +37,8 @@ describe('PactVerifierService', () => {
   beforeEach(() => {
     jest.resetAllMocks();
 
+    pactVerifierMock.verifyProvider = jest.fn().mockReturnValue(Promise.resolve('some-result'));
+
     appMock.getUrl = jest.fn().mockResolvedValueOnce('http://127.0.0.1:80');
     appMock.listen = jest.fn().mockResolvedValueOnce(true);
     appMock.close = jest.fn().mockResolvedValueOnce(true);

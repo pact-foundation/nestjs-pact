@@ -4,9 +4,11 @@ import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { PactPublisherProvider } from './pact-publisher.provider';
 import { PactPublicationOptions } from '../interfaces/pact-consumer-module-options.interface';
 
-const mockPublisher = jest.createMockFromModule<Publisher>('@pact-foundation/pact-core');
-
-mockPublisher.publish = jest.fn();
+jest.mock('@pact-foundation/pact-core', () => ({
+  Publisher: jest.fn().mockImplementation(() => {
+    publish: jest.fn();
+  }),
+}));
 
 describe('PactPublisherProvider', () => {
   const publicationOptions: PactPublicationOptions = {
