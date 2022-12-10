@@ -44,7 +44,7 @@ export class PactConsumerCoreModule {
       {
         provide: useClass,
         useClass,
-      } as ClassProvider,
+      },
     ];
   }
 

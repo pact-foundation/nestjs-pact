@@ -30,7 +30,7 @@ describe('PactFactory', () => {
 
   describe('Given a PactFactory service', () => {
     describe("When calling 'createContractBetween' method", () => {
-      let pact: any;
+      let pact: Pact;
 
       beforeAll(() => {
         pact = pactFactoryService.createContractBetween(contractBetween);

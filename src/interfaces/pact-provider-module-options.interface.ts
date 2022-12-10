@@ -1,5 +1,5 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
-import { VerifierOptions } from '@pact-foundation/pact/src/dsl/verifier/types';
+import { VerifierOptions } from '@pact-foundation/pact';
 
 export type PactProviderOptions = VerifierOptions;
 

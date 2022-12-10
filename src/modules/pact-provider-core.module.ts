@@ -42,7 +42,7 @@ export class PactProviderCoreModule {
       {
         provide: useClass,
         useClass,
-      } as ClassProvider,
+      },
     ];
   }
 
