@@ -1,4 +1,5 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
+
 import { PactOptions } from '@pact-foundation/pact';
 import { PublisherOptions } from '@pact-foundation/pact-core';
 

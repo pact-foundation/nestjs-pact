@@ -1,8 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PactModuleProviders } from '../common/pact-module-providers.enum';
-import { PactVerifierService } from './pact-verifier.service';
-import { PactProviderOptions } from '../interfaces/pact-provider-module-options.interface';
 import { INestApplication } from '@nestjs/common';
+
+import { VerifierOptions } from '@pact-foundation/pact';
+
+import { PactModuleProviders } from '../common/pact-module-providers.enum';
+
+import { PactVerifierService } from './pact-verifier.service';
 
 jest.mock('get-port', () => () => 80);
 
@@ -20,7 +23,7 @@ describe('PactVerifierService', () => {
     verifyProvider: jest.fn().mockReturnValue(Promise.resolve('some-result')),
   };
 
-  let options: PactProviderOptions = { providerBaseUrl: 'http://127.0.0.1:80' };
+  let options: VerifierOptions = { providerBaseUrl: 'http://127.0.0.1:80' };
 
   beforeAll(async () => {
     moduleRef = await Test.createTestingModule({

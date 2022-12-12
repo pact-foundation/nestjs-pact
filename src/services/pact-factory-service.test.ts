@@ -1,8 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { Pact } from '@pact-foundation/pact';
-import { PactFactory } from './pact-factory.service';
+
 import { PactConsumerOptions } from '../interfaces/pact-consumer-module-options.interface';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
+
+import { PactFactory } from './pact-factory.service';
 
 jest.mock('@pact-foundation/pact');
 

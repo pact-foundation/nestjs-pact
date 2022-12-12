@@ -1,8 +1,10 @@
 import { Test } from '@nestjs/testing';
-import { Verifier } from '@pact-foundation/pact';
+
+import { Verifier, VerifierOptions } from '@pact-foundation/pact';
+
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
+
 import { PactVerifierProvider } from './pact-verifier.provider';
-import { PactProviderOptions } from '../interfaces/pact-provider-module-options.interface';
 
 jest.mock('@pact-foundation/pact', () => ({
   Verifier: jest.fn().mockImplementation(() => {
@@ -11,7 +13,7 @@ jest.mock('@pact-foundation/pact', () => ({
 }));
 
 describe('PactVerifierProvider', () => {
-  const providerOptions: PactProviderOptions = { providerBaseUrl: 'http://127.0.0.1:80' };
+  const providerOptions: VerifierOptions = { providerBaseUrl: 'http://127.0.0.1:80' };
 
   beforeAll(async () => {
     await Test.createTestingModule({

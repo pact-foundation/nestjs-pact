@@ -1,5 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
+
 import { Pact } from '@pact-foundation/pact';
+
 import { ContractBetween } from '../interfaces/contract-between.interface';
 import { PactConsumerOptions } from '../interfaces/pact-consumer-module-options.interface';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';

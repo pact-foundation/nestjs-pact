@@ -1,8 +1,10 @@
 import { DynamicModule, Module } from '@nestjs/common';
+
 import {
   PactConsumerModuleAsyncOptions,
   PactConsumerOverallOptions,
 } from '../interfaces/pact-consumer-module-options.interface';
+
 import { PactConsumerCoreModule } from './pact-consumer-core.module';
 
 @Module({})

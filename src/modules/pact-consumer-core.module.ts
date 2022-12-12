@@ -1,4 +1,5 @@
 import { DynamicModule, Module, Provider, Type } from '@nestjs/common';
+
 import {
   PactConsumerModuleAsyncOptions,
   PactConsumerOptionsFactory,

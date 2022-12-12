@@ -59,7 +59,7 @@
     "eslint": "8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^27.1.6",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.2",
@@ -80,7 +80,7 @@
   "peerDependencies": {
     "@nestjs/common": "7.x || 8.x || 9.x",
     "@nestjs/core": "7.x || 8.x || 9.x",
-    "@pact-foundation/pact": "^10.0.0"
+    "@pact-foundation/pact": "^10.4.0"
   },
   "dependencies": {
     "get-port": "^6.1.2"

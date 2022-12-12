@@ -1,11 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PactConsumerModule } from './pact-consumer.module';
+
 import {
   PactConsumerOptionsFactory,
   PactConsumerOverallOptions,
 } from '../interfaces/pact-consumer-module-options.interface';
 import { PactFactory } from '../services/pact-factory.service';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
+
+import { PactConsumerModule } from './pact-consumer.module';
 
 describe("Given a 'PactConsumerModule' module", () => {
   const config: PactConsumerOverallOptions = {

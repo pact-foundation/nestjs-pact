@@ -1,7 +1,9 @@
 import { Test } from '@nestjs/testing';
-import { PactProviderModule } from './pact-provider.module';
+
 import { PactProviderOptions, PactProviderOptionsFactory } from '../interfaces/pact-provider-module-options.interface';
 import { PactVerifierService } from '../services/pact-verifier.service';
+
+import { PactProviderModule } from './pact-provider.module';
 
 describe("Given a 'PactProviderModule' module", () => {
   const config: PactProviderOptions = {

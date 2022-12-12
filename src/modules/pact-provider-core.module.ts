@@ -1,7 +1,9 @@
 import { DynamicModule, Module, Provider, Type } from '@nestjs/common';
+
+import { VerifierOptions } from '@pact-foundation/pact';
+
 import {
   PactProviderModuleAsyncOptions,
-  PactProviderOptions,
   PactProviderOptionsFactory,
 } from '../interfaces/pact-provider-module-options.interface';
 import { PactVerifierService } from '../services/pact-verifier.service';
@@ -11,7 +13,7 @@ import { PactVerifierProvider } from '../providers/pact-verifier.provider';
 
 @Module({})
 export class PactProviderCoreModule {
-  public static register(options: PactProviderOptions): DynamicModule {
+  public static register(options: VerifierOptions): DynamicModule {
     const optionsProvider = ProviderFactory.create(PactModuleProviders.ProviderOptions, options);
 
     return {

@@ -1,7 +1,9 @@
 import { FactoryProvider } from '@nestjs/common';
+
+import { Publisher } from '@pact-foundation/pact-core';
+
 import { PactPublicationOptions } from '../interfaces/pact-consumer-module-options.interface';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
-import { Publisher } from '@pact-foundation/pact-core';
 
 export const PactPublisherProvider: FactoryProvider<Publisher> = {
   provide: PactModuleProviders.PactPublisher,
