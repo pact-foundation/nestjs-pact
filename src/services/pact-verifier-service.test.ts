@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 
-import { VerifierOptions } from '@pact-foundation/pact';
+import { Verifier, VerifierOptions } from '@pact-foundation/pact';
 
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
@@ -11,6 +11,7 @@ jest.mock('get-port', () => () => 80);
 
 describe('PactVerifierService', () => {
   let moduleRef: TestingModule;
+  let pactVerifier: Verifier;
   let pactVerifierService: PactVerifierService;
 
   const appMock = {
@@ -19,9 +20,9 @@ describe('PactVerifierService', () => {
     close: jest.fn().mockResolvedValueOnce(true),
   };
 
-  const pactVerifierMock = {
-    verifyProvider: jest.fn().mockReturnValue(Promise.resolve('some-result')),
-  };
+  class pactVerifierMock {
+    verifyProvider = jest.fn().mockReturnValue(Promise.resolve('some-result'));
+  }
 
   let options: VerifierOptions = { providerBaseUrl: 'http://127.0.0.1:80' };
 
@@ -31,7 +32,7 @@ describe('PactVerifierService', () => {
         PactVerifierService,
         {
           provide: PactModuleProviders.PactVerifier,
-          useValue: pactVerifierMock,
+          useClass: pactVerifierMock,
         },
         {
           provide: PactModuleProviders.ProviderOptions,
@@ -41,6 +42,7 @@ describe('PactVerifierService', () => {
     }).compile();
 
     pactVerifierService = moduleRef.get<PactVerifierService>(PactVerifierService);
+    pactVerifier = moduleRef.get<Verifier>(PactModuleProviders.PactVerifier);
   });
 
   beforeEach(() => {
@@ -55,9 +57,17 @@ describe('PactVerifierService', () => {
     test('allows configuring hosts', async () => {
       expect(appMock.listen).toHaveBeenCalledWith(80, '127.0.0.1');
     });
+    test("then call 'verifyProvider' is called", async () => {
+      expect(pactVerifier.verifyProvider).toHaveBeenCalled();
+    });
     test('then call the application methods', () => {
       expect(appMock.close).toHaveBeenCalled();
       expect(appMock.listen).toHaveBeenCalled();
+    });
+    describe("When calling the 'getVerifier' method", () => {
+      test('then return something', () => {
+        expect(pactVerifierService.getVerifier()).toBeInstanceOf(pactVerifierMock);
+      });
     });
   });
 });
