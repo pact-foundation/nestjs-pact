@@ -83,7 +83,7 @@
     "@pact-foundation/pact": "^10.4.0"
   },
   "dependencies": {
-    "get-port": "^6.1.2"
+    "get-port": "^5.0.0"
   },
   "lint-staged": {
     "*.ts": [

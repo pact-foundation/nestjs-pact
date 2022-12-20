@@ -1,26 +1,23 @@
 import { INestApplication, Inject, Injectable } from '@nestjs/common';
+import getPort from 'get-port';
 
-import { Verifier, VerifierOptions } from '@pact-foundation/pact';
+import { Verifier } from '@pact-foundation/pact';
 
+import { PactProviderOptions } from '../interfaces/pact-provider-module-options.interface';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
 @Injectable()
 export class PactVerifierService {
-  public constructor(
-    @Inject(PactModuleProviders.ProviderOptions) private readonly options: VerifierOptions,
-    @Inject(PactModuleProviders.PactVerifier) private readonly verifier: Verifier
-  ) {}
+  public constructor(@Inject(PactModuleProviders.ProviderOptions) private readonly options: PactProviderOptions) {}
 
-  public async verify(app: INestApplication): Promise<any> {
-    const providerUrl = new URL(this.options.providerBaseUrl);
+  public async verify(app: INestApplication): Promise<unknown> {
+    const host = new URL(this.options.providerHost || 'http://localhost');
 
-    await app.listen(providerUrl.port || 80, providerUrl.hostname);
+    await app.listen(host.port || (await getPort()), host.hostname);
 
     // this can throw an error, we are sure the app will close after calling finally
-    return this.verifier.verifyProvider().finally(() => app.close());
-  }
-
-  public getVerifier(): Verifier {
-    return this.verifier;
+    return new Verifier({ ...this.options, providerBaseUrl: await app.getUrl() })
+      .verifyProvider()
+      .finally(() => app.close());
   }
 }

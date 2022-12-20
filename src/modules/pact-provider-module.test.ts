@@ -1,19 +1,17 @@
 import { Test } from '@nestjs/testing';
 
-import { VerifierOptions } from '@pact-foundation/pact';
-
-import { PactProviderOptionsFactory } from '../interfaces/pact-provider-module-options.interface';
+import { PactProviderOptions, PactProviderOptionsFactory } from '../interfaces/pact-provider-module-options.interface';
 import { PactVerifierService } from '../services/pact-verifier.service';
 
 import { PactProviderModule } from './pact-provider.module';
 
 describe("Given a 'PactProviderModule' module", () => {
-  const config: VerifierOptions = {
-    providerBaseUrl: 'http://127.0.0.1:80',
+  const config: PactProviderOptions = {
+    providerHost: 'http://127.0.0.1:80',
   };
 
   class PactProviderConfigTestService implements PactProviderOptionsFactory {
-    createPactProviderOptions(): VerifierOptions {
+    createPactProviderOptions(): PactProviderOptions {
       return config;
     }
   }
