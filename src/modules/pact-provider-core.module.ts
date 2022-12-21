@@ -1,34 +1,32 @@
 import { DynamicModule, Module, Provider, Type } from '@nestjs/common';
 
-import { VerifierOptions } from '@pact-foundation/pact';
-
 import {
   PactProviderModuleAsyncOptions,
+  PactProviderOptions,
   PactProviderOptionsFactory,
 } from '../interfaces/pact-provider-module-options.interface';
 import { PactVerifierService } from '../services/pact-verifier.service';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { ProviderFactory } from '../common/provider-factory';
-import { PactVerifierProvider } from '../providers/pact-verifier.provider';
 
 @Module({})
 export class PactProviderCoreModule {
-  public static register(options: VerifierOptions): DynamicModule {
+  public static register(options: PactProviderOptions): DynamicModule {
     const optionsProvider = ProviderFactory.create(PactModuleProviders.ProviderOptions, options);
 
     return {
       module: PactProviderCoreModule,
-      exports: [PactVerifierService, PactVerifierProvider],
-      providers: [optionsProvider, PactVerifierService, PactVerifierProvider],
+      exports: [PactVerifierService],
+      providers: [optionsProvider, PactVerifierService],
     };
   }
 
   public static registerAsync(options: PactProviderModuleAsyncOptions): DynamicModule {
     return {
-      exports: [PactVerifierService, PactVerifierProvider],
+      exports: [PactVerifierService],
       imports: options.imports,
       module: PactProviderCoreModule,
-      providers: [...this.createAsyncProviders(options), PactVerifierService, PactVerifierProvider],
+      providers: [...this.createAsyncProviders(options), PactVerifierService],
     };
   }
 
