@@ -31,7 +31,7 @@
 ## Installation
 
 ```bash
-npm i -D nestjs-pact @pact-foundation/pact
+npm i -D nestjs-pact @pact-foundation/pact@^9.0.0
 ```
 
 ## Example
