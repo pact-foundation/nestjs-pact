@@ -40,8 +40,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Bootstrap Packages
-        run: yarn lerna bootstrap
+      # - name: Bootstrap Packages
+      #   run: yarn lerna bootstrap
 
       - name: Build
         run: yarn build
@@ -51,9 +51,9 @@ jobs:
 
       - name: Release
         id: changesets
-        uses: changesets/action@master
+        uses: changesets/action@v1
         with:
-          publish: yarn lerna publish from-package --yes
+          publish: yarn publish
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
