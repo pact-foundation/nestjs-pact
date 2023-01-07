@@ -53,7 +53,7 @@ jobs:
         id: changesets
         uses: changesets/action@master
         with:
-          publish: yarn lerna publish from-package --yes
+          publish: npm publish --access public
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -4,4 +4,5 @@ export enum PactModuleProviders {
   PublicationOptions = 'PUBLICATION_OPTIONS',
   PactPublisher = 'PACT_PUBLISHER',
   Pact = 'PACT_INSTANCE',
+  PactV3 = 'PACTV3_INSTANCE',
 }
