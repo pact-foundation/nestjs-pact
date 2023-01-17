@@ -36,7 +36,6 @@ jobs:
             FirstName LastName (omer.mroadd@gmail.com, omer.mroadd@gmail.com)=true
             email=omer.mroadd@gmail.com
             always-auth=true
-            access=public
           EOF
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

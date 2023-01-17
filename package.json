@@ -1,5 +1,5 @@
 {
-  "name": "@pact-foundation/nestjs-pact",
+  "name": "nestjs-pact",
   "version": "2.2.1",
   "license": "MIT",
   "description": "Injectable Pact.js Consumer/Producer for NestJS",
