@@ -1,14 +1,24 @@
 import { Test } from '@nestjs/testing';
-import { Publisher } from '@pact-foundation/pact';
+
+import { Publisher } from '@pact-foundation/pact-core';
+
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
-import { PactPublisherProvider } from '../providers/pact-publisher.provider';
+import { PactPublicationOptions } from '../interfaces/pact-consumer-module-options.interface';
 
-jest.mock('@pact-foundation/pact');
+import { PactPublisherProvider } from './pact-publisher.provider';
 
-(Publisher as jest.Mock<Publisher>).mockImplementation(() => (({ Publisher: jest.fn() } as unknown) as Publisher));
+jest.mock('@pact-foundation/pact-core', () => ({
+  Publisher: jest.fn().mockImplementation(() => {
+    publish: jest.fn();
+  }),
+}));
 
 describe('PactPublisherProvider', () => {
-  const publicationOptions = { pactBroker: 'example-broker', consumerVersion: '1' };
+  const publicationOptions: PactPublicationOptions = {
+    pactBroker: 'example-broker',
+    pactFilesOrDirs: ['./'],
+    consumerVersion: '1',
+  };
 
   beforeAll(async () => {
     await Test.createTestingModule({

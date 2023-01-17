@@ -1,9 +1,11 @@
 import { DynamicModule, Module } from '@nestjs/common';
-import { PactProviderCoreModule } from './pact-provider-core.module';
+
 import {
   PactProviderModuleAsyncOptions,
   PactProviderOptions,
 } from '../interfaces/pact-provider-module-options.interface';
+
+import { PactProviderCoreModule } from './pact-provider-core.module';
 
 @Module({})
 export class PactProviderModule {

@@ -1,4 +1,5 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
+
 import { VerifierOptions } from '@pact-foundation/pact';
 
 export type PactProviderOptions = Omit<VerifierOptions, 'providerBaseUrl'> & { providerHost?: string };

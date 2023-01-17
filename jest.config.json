@@ -9,6 +9,7 @@
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   },
+  "transformIgnorePatterns": ["<rootDir>/node_modules/"],
   "coverageDirectory": "./coverage",
   "coverageReporters": [
     "text",

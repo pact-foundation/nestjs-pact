@@ -1,5 +1,7 @@
-import { Pact } from '@pact-foundation/pact';
 import { Type } from '@nestjs/common';
+
+import { Pact } from '@pact-foundation/pact';
+
 import { ProviderFactory } from '../common/provider-factory';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
