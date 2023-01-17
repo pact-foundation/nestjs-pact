@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/omermorad/nestjs-pact/compare/v2.2.1...v2.2.2) (2023-01-17)
+
+
+### Bug Fixes
+
+* release config ([#24](https://github.com/omermorad/nestjs-pact/issues/24)) ([8f6515d](https://github.com/omermorad/nestjs-pact/commit/8f6515d10d1ebede302ccf1387d3f0d1b11f31d5))
+
 # [2.2.1](https://github.com/omermorad/nestjs-pact/compare/v2.1.1...v2.2.1) (2022-07-12)
 
 ### Feat
