@@ -33,7 +33,7 @@
 ## Installation
 
 ```bash
-npm i -D @pact-foundation/nestjs-pact @pact-foundation/pact
+npm i -D nestjs-pact @pact-foundation/pact
 ```
 
 ## Example
@@ -71,7 +71,7 @@ load the `PactConsumerModule` like below:
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { PactConsumerModule } from '@pact-foundation/nestjs-pact';
+import { PactConsumerModule } from 'nestjs-pact';
 
 @Module({
   imports: [
@@ -88,7 +88,7 @@ Yay, now let's create the test file! let's call it `my-test.spec.ts`
 ```typescript
 import { Pact } from '@pact-foundation/pact';
 import { Test } from '@nestjs/testing';
-import { PactFactory } from '@pact-foundation/nestjs-pact';
+import { PactFactory } from 'nestjs-pact';
 import { PactModule } from '@test/pact/pact.module';
 
 describe('Pact', () => {
@@ -134,7 +134,7 @@ Now let's look how we can publish the pacts created from the test file to a Pact
 import { NestFactory } from '@nestjs/core';
 import { Logger, LoggerService } from '@nestjs/common';
 import { Publisher } from '@pact-foundation/pact';
-import { PactModuleProviders } from '@pact-foundation/nestjs-pact';
+import { PactModuleProviders } from 'nestjs-pact';
 import { PactModule } from '@test/pact/pact.module';
 
 (async () => {
@@ -173,7 +173,7 @@ Note: in your `tsconfig.json` file make sure you set `allowJs` to `true` in orde
 
 The usage in the `Provider` service is quite easy; In your `/test` folder (or wherever you put your tests)
 create a simple test module with NestJS `Test.createTestingModule` method and import the `PactProviderModule` module
-from `@pact-foundation/nestjs-pact`.
+from `nestjs-pact`.
 
 You can use `register` or `registerAsync` method, make sure you stick to `PactProviderOptions` interface options. \
 After creating the Nest application from the testing module, pass the app instance to the `verify` method,
@@ -186,7 +186,7 @@ Here is a quick and simple example:
 ```typescript
 import { Test } from '@nestjs/testing';
 import { INestApplication, Logger, LoggerService } from '@nestjs/common';
-import { PactProviderModule, PactVerifierService } from '@pact-foundation/nestjs-pact';
+import { PactProviderModule, PactVerifierService } from 'nestjs-pact';
 import { AppModule } from '@app/app.module';
 
 describe('Pact Verification', () => {
