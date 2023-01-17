@@ -70,7 +70,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "semantic-release-cli": "^5.4.4",
-    "ts-jest": "29.0.3",
+    "ts-jest": "29.0.5",
     "ts-loader": "^9.4.2",
     "ts-node": "10.9.1",
     "tsconfig-paths": "^4.1.1",
