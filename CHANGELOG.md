@@ -1,3 +1,23 @@
+# [2.3.0](https://github.com/omermorad/nestjs-pact/compare/v2.2.2...v2.3.0) (2023-01-17)
+
+
+### Bug Fixes
+
+* add ; back in for index.ts (linting) ([a530c63](https://github.com/omermorad/nestjs-pact/commit/a530c639e5aeb982b6c110154ba5a3a331f43f18))
+* add small comment to explain the try/catch for verifier ([bb2a606](https://github.com/omermorad/nestjs-pact/commit/bb2a606dcaa6cbefc40eb340fe23fec6f4838025))
+* import/order linting rule, peerDepencency version for @pact-foundation/pact ([da05e65](https://github.com/omermorad/nestjs-pact/commit/da05e658180ecdee4fd6084017f17f45fd9d53a9))
+* jest tests with mock modules now work ([b50c702](https://github.com/omermorad/nestjs-pact/commit/b50c702003435adaf096153235ef3158cb5e7efe))
+* make verifier a nestjs provider again ([df4249d](https://github.com/omermorad/nestjs-pact/commit/df4249d092694719d4e4f80d38ad533451d1a43d))
+* remove lerna, and dont fail-fast ([bf45577](https://github.com/omermorad/nestjs-pact/commit/bf455774a7988cac8559c7c8b892065d648bfa10))
+* revert to normal mocks for verifier test ([153e5fb](https://github.com/omermorad/nestjs-pact/commit/153e5fbc88eb35140b00631c3977f349a5bff2ca))
+* verifier-service tests added back in ([922258b](https://github.com/omermorad/nestjs-pact/commit/922258b07f8f31de2326172b780aea41833a2572))
+
+
+### Features
+
+* fix up to working version ([5cab2ac](https://github.com/omermorad/nestjs-pact/commit/5cab2ac6c834ec96e8006004d129fe076ed0a2ab))
+* upgrade packages, fix imports, fix return types, fix empty try-catch ([486dcbe](https://github.com/omermorad/nestjs-pact/commit/486dcbe0d15a6c90e78e3e516c6ab0f1a4ec0130))
+
 ## [2.2.2](https://github.com/omermorad/nestjs-pact/compare/v2.2.1...v2.2.2) (2023-01-17)
 
 
