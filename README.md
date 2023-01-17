@@ -32,8 +32,16 @@
 
 ## Installation
 
+Pact-JS v10.x+ users
+
 ```bash
 npm i -D nestjs-pact @pact-foundation/pact
+```
+
+Pact-JS v9.x users
+
+```bash
+npm i -D nestjs-pact@2.2.2 @pact-foundation/pact@9.18.1
 ```
 
 ## Example
