@@ -13,28 +13,23 @@ jobs:
         node-version: [14.x,  16.x, 18.x]
     steps:
       - uses: actions/checkout@v3
-
-      - name: Lint Commit Message
-        run: |
-          yarn add -D @commitlint/config-conventional
-          echo $(git log -1 --pretty=format:"%s") | yarn commitlint
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Create .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            @nestjs-pact:registry=https://registry.npmjs.org/
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: corepack enable
+        # Required for yarn, when run via act locally
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn install
+
+      - name: Lint Commit Message
+        run: |
+          echo $(git log -1 --pretty=format:"%s") | yarn commitlint
 
       - name: Build
         run: yarn build

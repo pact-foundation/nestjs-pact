@@ -19,11 +19,13 @@
 
 ## Table Of Contents
 
+- [Table Of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Example](#example)
 - [About](#about)
 - [Introduction](#introduction)
-- [Contributing](#contributing)
+  - [Consumer](#consumer)
+  - [Provider](#provider)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
