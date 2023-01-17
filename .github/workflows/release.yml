@@ -13,12 +13,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+
+      - run: corepack enable
+        # Required for yarn, when run via act locally
+
+      - name: Install Dependencies
+        run: yarn install
+          
       - name: Lint Commit Message
-        working-directory: commit-lint
-        run: |
-          yarn init -y
-          yarn add -D @commitlint/config-conventional
-          echo $(git log -1 --pretty=format:"%s") | yarn commitlint
+        run: echo $(git log -1 --pretty=format:"%s") | yarn commitlint
 
       - name: Create .npmrc
         run: |
@@ -32,17 +40,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Setup Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-
-      - name: Install Dependencies
-        run: yarn install
-
-      # - name: Bootstrap Packages
-      #   run: yarn lerna bootstrap
-
       - name: Build
         run: yarn build
 
@@ -50,11 +47,23 @@ jobs:
         run: yarn test
 
       - name: Release
-        id: changesets
-        uses: changesets/action@v1
+        uses: cycjimmy/semantic-release-action@v3
         with:
-          publish: npm publish
-          commit: "chore: version packages"
+          dry_run: false
+          semantic_version: 16
+          branches: |    
+            [
+              'master', 
+              'next', 
+              {
+                name: 'beta', 
+                prerelease: true
+              }, 
+              {
+                name: 'alpha', 
+                prerelease: true
+              },
+            ]
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
