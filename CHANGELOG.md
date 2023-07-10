@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/omermorad/nestjs-pact/compare/v2.3.0...v2.3.1) (2023-07-10)
+
+
+### Bug Fixes
+
+* add peer dep pact-js v11 and nest-js v10 ([#47](https://github.com/omermorad/nestjs-pact/issues/47)) ([d90cc37](https://github.com/omermorad/nestjs-pact/commit/d90cc37017a4e86d9b46626bb08f50b47f2e04f3))
+
 # [2.3.0](https://github.com/omermorad/nestjs-pact/compare/v2.2.2...v2.3.0) (2023-01-17)
 
 
