@@ -4355,8 +4355,8 @@ humanize-ms@^1.2.1:
     ms "^2.0.0"
 
 husky@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.npmjs.org/husky/-/husky-8.0.2.tgz"
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.3.tgz#4936d7212e46d1dea28fef29bb3a108872cd9184"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
@@ -7498,12 +7498,6 @@ semver-diff@^2.0.0:
 semver@7.3.7:
   version "7.3.7"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.7.tgz#12c5b649afdbf9049707796e22a4028814ce523f"
-  dependencies:
-    lru-cache "^6.0.0"
-
-semver@7.x, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7:
-  version "7.5.4"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
   dependencies:
     lru-cache "^6.0.0"
 
