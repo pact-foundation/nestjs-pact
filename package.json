@@ -45,10 +45,10 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@nestjs/common": "^9.2.1",
-    "@nestjs/core": "^9.2.1",
-    "@nestjs/testing": "^9.2.1",
-    "@pact-foundation/pact": "^10.4.0",
+    "@nestjs/common": "^10.3.0",
+    "@nestjs/core": "^10.3.0",
+    "@nestjs/testing": "^10.3.0",
+    "@pact-foundation/pact": "^12.1.1",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
     "@types/get-port": "^4.2.0",
@@ -81,7 +81,7 @@
   "peerDependencies": {
     "@nestjs/common": "7.x || 8.x || 9.x || 10.x",
     "@nestjs/core": "7.x || 8.x || 9.x || 10.x",
-    "@pact-foundation/pact": "10.x || 11.x"
+    "@pact-foundation/pact": "10.x || 11.x || 12.x"
   },
   "dependencies": {
     "get-port": "^5.0.0"
