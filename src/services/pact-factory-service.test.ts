@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { Pact } from '@pact-foundation/pact';
+import { PactV3 as Pact } from '@pact-foundation/pact';
 
 import { PactConsumerOptions } from '../interfaces/pact-consumer-module-options.interface';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
