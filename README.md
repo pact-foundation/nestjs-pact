@@ -141,7 +141,7 @@ Now let's look how we can publish the pacts created from the test file to a Pact
 ```typescript
 import { NestFactory } from '@nestjs/core';
 import { Logger, LoggerService } from '@nestjs/common';
-import { Publisher } from '@pact-foundation/pact';
+import { Publisher } from '@pact-foundation/pact-cli';
 import { PactModuleProviders } from 'nestjs-pact';
 import { PactModule } from '@test/pact/pact.module';
 

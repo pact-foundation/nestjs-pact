@@ -1,13 +1,13 @@
 import { Test } from '@nestjs/testing';
 
-import { Publisher } from '@pact-foundation/pact-core';
+import { Publisher } from '@pact-foundation/pact-cli';
 
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { PactPublicationOptions } from '../interfaces/pact-consumer-module-options.interface';
 
 import { PactPublisherProvider } from './pact-publisher.provider';
 
-jest.mock('@pact-foundation/pact-core', () => ({
+jest.mock('@pact-foundation/pact-cli', () => ({
   Publisher: jest.fn().mockImplementation(() => {
     publish: jest.fn();
   }),
