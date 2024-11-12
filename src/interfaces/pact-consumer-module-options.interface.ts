@@ -1,7 +1,7 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
 
 import { PactOptions } from '@pact-foundation/pact';
-import { PublisherOptions } from '@pact-foundation/pact-core';
+import { PublisherOptions } from '@pact-foundation/pact-cli';
 
 export type PactConsumerOptions = Omit<PactOptions, 'consumer' | 'provider'>;
 export type PactPublicationOptions = PublisherOptions;
