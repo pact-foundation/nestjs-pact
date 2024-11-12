@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/omermorad/nestjs-pact/compare/v2.3.1...v2.3.2) (2024-11-12)
+
+
+### Bug Fixes
+
+* **peer-deps:** support pact v13.x & pact-cli for publisher interface ([#84](https://github.com/omermorad/nestjs-pact/issues/84)) ([7ca2136](https://github.com/omermorad/nestjs-pact/commit/7ca21366c1c06622c3f87ede496308324ab77763))
+
 ## [2.3.1](https://github.com/omermorad/nestjs-pact/compare/v2.3.0...v2.3.1) (2023-07-10)
 
 
