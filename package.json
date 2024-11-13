@@ -84,7 +84,7 @@
     "@pact-foundation/pact-cli": "15.x || 16.x"
   },
   "dependencies": {
-    "get-port": "^5.0.0"
+    "get-port": "^7.1.0"
   },
   "lint-staged": {
     "*.ts": [
