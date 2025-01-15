@@ -134,7 +134,7 @@ describe('Pact', () => {
 });
 ```
 
-Now let's look how we can publish the pacts created from the test file to a Pact broker!
+Now let's look at how we can publish the pacts created from the test file to a Pact broker!
 
 **test/pact/publish-pacts.ts**
 
@@ -161,9 +161,7 @@ import { PactModule } from '@test/pact/pact.module';
 
     logger.log('Pact contract publishing complete!');
     logger.log('');
-    logger.log('Head over to https://test.pact.dius.com.au/ and login with');
-    logger.log('=> Username: dXfltyFMgNOFZAxr8io9wJ37iUpY42M');
-    logger.log('=> Password: O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1');
+    logger.log('Head over to [https://test.pact.dius.com.au/ and login with](https://test.pactflow.io/login?code=98f7810e-c7dc-493b-9c3d-7849952f1d9a&utm_medium=web&utm_source=nestjs-pact-readme)');
     logger.log('to see your published contracts.');
   } catch (e) {
     logger.error('Pact contract publishing failed: ', e);
