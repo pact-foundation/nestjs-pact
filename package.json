@@ -1,6 +1,6 @@
 {
   "name": "nestjs-pact",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "license": "MIT",
   "description": "Injectable Pact.js Consumer/Producer for NestJS",
   "keywords": [

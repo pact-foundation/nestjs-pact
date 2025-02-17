@@ -1,3 +1,10 @@
+## [2.3.4](https://github.com/omermorad/nestjs-pact/compare/v2.3.3...v2.3.4) (2025-02-17)
+
+
+### Bug Fixes
+
+* **deps:** add nestjs v11 to peer deps ([#90](https://github.com/omermorad/nestjs-pact/issues/90)) ([81755e3](https://github.com/omermorad/nestjs-pact/commit/81755e3c423bb0810e82ec86adfa83fda3c484fb)), closes [#88](https://github.com/omermorad/nestjs-pact/issues/88)
+
 ## [2.3.3](https://github.com/omermorad/nestjs-pact/compare/v2.3.2...v2.3.3) (2025-02-17)
 
 
