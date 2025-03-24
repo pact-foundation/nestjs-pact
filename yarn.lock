@@ -4058,9 +4058,10 @@ get-package-type@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/get-package-type/-/get-package-type-0.1.0.tgz"
 
-get-port@*, get-port@^5.0.0:
-  version "5.1.1"
-  resolved "https://registry.npmjs.org/get-port/-/get-port-5.1.1.tgz"
+get-port@*, get-port@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/get-port/-/get-port-7.1.0.tgz#d5a500ebfc7aa705294ec2b83cc38c5d0e364fec"
+  integrity sha512-QB9NKEeDg3xxVwCCwJQ9+xycaz6pBB6iQ76wiWMl1927n0Kir6alPiP+yuiICLLU4jpMe08dXfpebuQppFA2zw==
 
 get-stream@^3.0.0:
   version "3.0.0"
