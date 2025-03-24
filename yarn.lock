@@ -905,16 +905,17 @@
     "@pact-foundation/pact-core-linux-x64-musl" "16.0.0"
     "@pact-foundation/pact-core-windows-x64" "16.0.0"
 
-"@pact-foundation/pact@^15.0.0":
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-15.0.0.tgz#2bdec3f4a8d2b296f72c0692f0247c3c8b32958b"
-  integrity sha512-qZMWz4k6ROxMsPcWnyxNAFi58AhcgiuOaSWMsUKz4q4UF+5W2nK+4PnXIGJPTako0X0zurfxgxcTwCB9QHlSHw==
+"@pact-foundation/pact@^15.0.1":
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-15.0.1.tgz#b05270149d5720186198114b5bf6e333ebba634e"
+  integrity sha512-9pv9mN/grXiXCPmyzQb9YYeyT8aHYO4uRNtfuR4IGLhNSHkHIhiS97ZUsegPruVkWiTcCv9tJahG+1OhL5BrTQ==
   dependencies:
     "@pact-foundation/pact-core" "^16.0.0"
     axios "^1.8.4"
     body-parser "^1.20.3"
     chalk "4.1.2"
     express "^4.21.1"
+    graphql "^16.10.0"
     graphql-tag "^2.9.1"
     http-proxy "^1.18.1"
     https-proxy-agent "^7.0.4"
@@ -4309,6 +4310,11 @@ graphql-tag@^2.9.1:
   resolved "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.12.6.tgz"
   dependencies:
     tslib "^2.1.0"
+
+graphql@^16.10.0:
+  version "16.10.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.10.0.tgz#24c01ae0af6b11ea87bf55694429198aaa8e220c"
+  integrity sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==
 
 har-schema@^2.0.0:
   version "2.0.0"
