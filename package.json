@@ -47,8 +47,8 @@
     "@nestjs/common": "^9.2.1",
     "@nestjs/core": "^9.2.1",
     "@nestjs/testing": "^9.2.1",
-    "@pact-foundation/pact": "^13.1.4",
-    "@pact-foundation/pact-cli": "^16.0.4",
+    "@pact-foundation/pact": "^15.0.1",
+    "@pact-foundation/pact-cli": "^16.0.7",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
     "@types/get-port": "^4.2.0",
@@ -80,7 +80,7 @@
   "peerDependencies": {
     "@nestjs/common": "7.x || 8.x || 9.x || 10.x || 11.x",
     "@nestjs/core": "7.x || 8.x || 9.x || 10.x || 11.x",
-    "@pact-foundation/pact": "10.x || 11.x || 12.x || 13.x || 14.x",
+    "@pact-foundation/pact": "10.x || 11.x || 12.x || 13.x || 14.x || 15.x",
     "@pact-foundation/pact-cli": "15.x || 16.x"
   },
   "dependencies": {
