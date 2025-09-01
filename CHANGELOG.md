@@ -1,3 +1,10 @@
+## [2.3.5](https://github.com/omermorad/nestjs-pact/compare/v2.3.4...v2.3.5) (2025-09-01)
+
+
+### Reverts
+
+* Revert "Add renovate.json (#86)" (#95) ([48952d4](https://github.com/omermorad/nestjs-pact/commit/48952d49ff73b220b6cc790fa06172524d64616d)), closes [#86](https://github.com/omermorad/nestjs-pact/issues/86) [#95](https://github.com/omermorad/nestjs-pact/issues/95)
+
 ## [2.3.4](https://github.com/omermorad/nestjs-pact/compare/v2.3.3...v2.3.4) (2025-02-17)
 
 
