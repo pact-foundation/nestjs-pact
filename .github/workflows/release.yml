@@ -13,10 +13,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js 18.x
+      - name: Setup Node.js 20.x
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 20.x
           cache: 'yarn'
 
       - run: corepack enable
@@ -50,7 +50,7 @@ jobs:
         uses: cycjimmy/semantic-release-action@v4
         with:
           dry_run: false
-          semantic_version: 18
+          semantic_version: 20
           branches: |    
             [
               'master', 

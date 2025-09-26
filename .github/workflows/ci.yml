@@ -10,8 +10,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [20.x]
+        # node-version: [20.x, 22.x, 24.x]
     steps:
+
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
@@ -24,8 +26,20 @@ jobs:
       - run: corepack enable
         # Required for yarn, when run via act locally
 
+      - name: Clone and Build Pact.js
+        run: |
+          cd /tmp
+          git clone https://github.com/pact-foundation/pact-js
+          cd pact-js
+          git checkout feat/v4-asynchronous-messages-pact-core-v17
+          yarn install
+          yarn run dist
+          cd dist
+          yarn link
       - name: Install Dependencies
         run: yarn install
+      - name: link @pact-foundation/pact
+        run: yarn link @pact-foundation/pact
 
       - name: Lint Commit Message
         run: |
