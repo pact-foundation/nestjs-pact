@@ -47,9 +47,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@nestjs/common": "^9.2.1",
-    "@nestjs/core": "^9.2.1",
-    "@nestjs/testing": "^9.2.1",
+    "@nestjs/common": "11.1.6",
+    "@nestjs/core": "11.1.6",
+    "@nestjs/testing": "11.1.6",
     "@pact-foundation/pact": "^15.0.1",
     "@pact-foundation/pact-cli": "^16.0.7",
     "@semantic-release/changelog": "^6.0.2",
