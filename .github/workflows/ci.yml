@@ -25,20 +25,8 @@ jobs:
       - run: corepack enable
         # Required for yarn, when run via act locally
 
-      - name: Clone and Build Pact.js
-        run: |
-          cd /tmp
-          git clone https://github.com/pact-foundation/pact-js
-          cd pact-js
-          git checkout feat/v4-asynchronous-messages-pact-core-v17
-          yarn install
-          yarn run dist
-          cd dist
-          yarn link
       - name: Install Dependencies
         run: yarn install
-      - name: link @pact-foundation/pact
-        run: yarn link @pact-foundation/pact
 
       - name: Lint Commit Message
         run: |
