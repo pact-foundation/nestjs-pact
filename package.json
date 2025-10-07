@@ -1,6 +1,6 @@
 {
   "name": "nestjs-pact",
-  "version": "2.3.5",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Injectable Pact.js Consumer/Producer for NestJS",
   "keywords": [
@@ -24,6 +24,9 @@
   "bugs": {
     "url": "https://github.com/omermorad/nestjs-pact/issues"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "readme": "https://github.com/omermorad/nestjs-pact/README.md",
   "scripts": {
     "prebuild": "./node_modules/.bin/rimraf dist",
@@ -44,11 +47,11 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@nestjs/common": "^9.2.1",
-    "@nestjs/core": "^9.2.1",
-    "@nestjs/testing": "^9.2.1",
-    "@pact-foundation/pact": "^15.0.1",
-    "@pact-foundation/pact-cli": "^16.0.7",
+    "@nestjs/common": "11.1.6",
+    "@nestjs/core": "11.1.6",
+    "@nestjs/testing": "11.1.6",
+    "@pact-foundation/pact": "^16.0.0",
+    "@pact-foundation/pact-cli": "^16.1.4",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
     "@types/get-port": "^4.2.0",
@@ -80,7 +83,7 @@
   "peerDependencies": {
     "@nestjs/common": "7.x || 8.x || 9.x || 10.x || 11.x",
     "@nestjs/core": "7.x || 8.x || 9.x || 10.x || 11.x",
-    "@pact-foundation/pact": "10.x || 11.x || 12.x || 13.x || 14.x || 15.x",
+    "@pact-foundation/pact": "16.x",
     "@pact-foundation/pact-cli": "15.x || 16.x"
   },
   "dependencies": {

@@ -25,6 +25,12 @@
 - [About](#about)
 - [Introduction](#introduction)
   - [Consumer](#consumer)
+    - [V2 setup](#v2-setup)
+    - [V3 setup](#v3-setup)
+    - [V4 setup](#v4-setup)
+    - [V2 test](#v2-test)
+    - [V3 test](#v3-test)
+    - [V4 test](#v4-test)
   - [Provider](#provider)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -73,17 +79,62 @@ The obvious advantage of this package is that Pact can be used in combination wi
 In order to use the `Consumer` module, you need to follow a few simple steps, let's go over it!
 
 First, create a file called `pact.module.ts` in your `test` folder (or wherever you put your tests), and simply
-load the `PactConsumerModule` like below:
+load the `PactConsumerModule`, `PactV2ConsumerModule`, or `PactV3ConsumerModule` like below:
 
 **test/pact/pact.module.ts**
 
+#### V2 setup
+
 ```typescript
 import { Module } from '@nestjs/common';
-import { PactConsumerModule } from 'nestjs-pact';
+import { PactV2ConsumerModule } from 'nestjs-pact';
+import { PactV2ConsumerConfigOptionsService } from './pact-consumer-config-options.service';
+import { AppModule } from '../../src/app.module';
 
 @Module({
   imports: [
-    PactConsumerModule.register({ ... }),
+    PactV2ConsumerModule.registerAsync({
+      imports: [AppModule],
+      useClass: PactV2ConsumerConfigOptionsService,
+    }),
+  ],
+})
+export class PactModule {}
+```
+
+#### V3 setup
+
+```typescript
+import { DynamicModule, Module } from '@nestjs/common';
+import { PactV3ConsumerModule } from 'nestjs-pact';
+import { PactV3ConsumerConfigOptionsService } from './pact-consumer-config-options.service';
+import { AppModule } from '../../src/app.module';
+
+@Module({
+  imports: [
+    PactV3ConsumerModule.registerAsync({
+      imports: [AppModule],
+      useClass: PactV3ConsumerConfigOptionsService,
+    }) as DynamicModule,
+  ],
+})
+export class PactModule {}
+```
+
+#### V4 setup
+
+```typescript
+import { DynamicModule, Module } from '@nestjs/common';
+import { PactConsumerModule } from 'nestjs-pact';
+import { PactConsumerConfigOptionsService } from './pact-consumer-config-options.service';
+import { AppModule } from '../../src/app.module';
+
+@Module({
+  imports: [
+    PactConsumerModule.registerAsync({
+      imports: [AppModule],
+      useClass: PactConsumerConfigOptionsService,
+    }) as DynamicModule,
   ],
 })
 export class PactModule {}
@@ -92,6 +143,94 @@ export class PactModule {}
 Yay, now let's create the test file! let's call it `my-test.spec.ts`
 
 **test/pact/my-test.spec.ts**
+
+#### V2 test
+
+```typescript
+import { PactV2 } from '@pact-foundation/pact';
+import { Test } from '@nestjs/testing';
+import { PactV2Factory } from 'nestjs-pact';
+import { PactModule } from '@test/pact/pact.module';
+
+describe('Pact', () => {
+  let pactFactory: PactV2Factory;
+  let provider: PactV2;
+
+  beforeAll(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [SomeOtherModule, AndAnotherModuleYouNeed, PactModule],
+    }).compile();
+
+    pactFactory = moduleRef.get(PactV2Factory);
+
+    provider = pactFactory.createContractBetween({
+      consumer: 'Consumer Service Name',
+      provider: 'Provider Service Name',
+    });
+
+    await provider.setup();
+  });
+
+  afterEach(() => provider.verify());
+
+  afterAll(() => provider.finalize());
+
+  describe('when something happens', () => {
+    describe('and another thing happens too', () => {
+      beforeAll(() => provider.addInteraction({ ... }));
+
+      it('should do something', () => {
+        return expect( ... );
+      });
+    });
+  });
+});
+```
+
+#### V3 test
+
+```typescript
+import { PactV3 } from '@pact-foundation/pact';
+import { Test } from '@nestjs/testing';
+import { PactV3Factory } from 'nestjs-pact';
+import { PactModule } from '@test/pact/pact.module';
+
+describe('Pact', () => {
+  let pactFactory: PactV3Factory;
+  let provider: PactV3;
+
+  beforeAll(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [SomeOtherModule, AndAnotherModuleYouNeed, PactModule],
+    }).compile();
+
+    pactFactory = moduleRef.get(PactV3Factory);
+
+    provider = pactFactory.createContractBetween({
+      consumer: 'Consumer Service Name',
+      provider: 'Provider Service Name',
+    });
+
+  });
+
+  describe('when something happens', () => {
+    describe('and another thing happens too', () => {
+      beforeAll(() => provider.addInteraction({ ... }));
+
+      it('returns a 401 unauthorized', () => {
+        return provider.executeTest(async (mockServer) => {
+          // mockServer.url is the full url + port of the pact mock server
+          process.env.API_HOST = mockServer.url;
+          return expect( ... );
+        });
+
+      });
+    });
+  });
+});
+```
+
+#### V4 test
 
 ```typescript
 import { Pact } from '@pact-foundation/pact';
@@ -115,20 +254,26 @@ describe('Pact', () => {
       provider: 'Provider Service Name',
     });
 
-    await provider.setup();
   });
 
-  afterEach(() => provider.verify());
-
-  afterAll(() => provider.finalize());
-
   describe('when something happens', () => {
-    describe('and another thing happens too', () => {
-      beforeAll(() => provider.addInteraction({ ... }));
-
-      it('should do something', () => {
-        return expect( ... );
-      });
+    it('returns the animal', async () => {
+      await provider
+        .addInteraction()
+        .given('Has an animal with ID 1')
+        .uponReceiving('a request for an animal with ID 1')
+        .withRequest('GET', regex('/animals/[0-9]+','/animals/1'), (builder) => {
+          builder.headers({ Authorization: 'Bearer token' });
+        })
+        .willRespondWith(HttpStatus.OK, (builder) => {
+          builder.headers({ 'Content-Type': 'application/json; charset=utf-8' });
+          builder.jsonBody(animalBodyExpectation);
+        })
+        .executeTest(async (mockServer) => {
+          process.env.API_HOST = mockServer.url;
+          const suggestedMates = await animalsService.getAnimalById(11);
+          expect(suggestedMates).toHaveProperty('id', 1);
+        });
     });
   });
 });
