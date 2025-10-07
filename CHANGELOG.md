@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/omermorad/nestjs-pact/compare/v2.3.5...v3.0.0) (2025-10-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to pact-js v16 / support PactV4 as default Pact. suppor… (#96)
+
+### Features
+
+* update to pact-js v16 / support PactV4 as default Pact. suppor… ([#96](https://github.com/omermorad/nestjs-pact/issues/96)) ([3d1c15d](https://github.com/omermorad/nestjs-pact/commit/3d1c15d9fac76122cee39603ca8ecb80b0aae8fb))
+
 ## [2.3.5](https://github.com/omermorad/nestjs-pact/compare/v2.3.4...v2.3.5) (2025-09-01)
 
 
