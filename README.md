@@ -25,6 +25,12 @@
 - [About](#about)
 - [Introduction](#introduction)
   - [Consumer](#consumer)
+    - [V2 setup](#v2-setup)
+    - [V3 setup](#v3-setup)
+    - [V4 setup](#v4-setup)
+    - [V2 test](#v2-test)
+    - [V3 test](#v3-test)
+    - [V4 test](#v4-test)
   - [Provider](#provider)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -73,11 +79,11 @@ The obvious advantage of this package is that Pact can be used in combination wi
 In order to use the `Consumer` module, you need to follow a few simple steps, let's go over it!
 
 First, create a file called `pact.module.ts` in your `test` folder (or wherever you put your tests), and simply
-load the `PactV2ConsumerModule` like below:
+load the `PactConsumerModule`, `PactV2ConsumerModule`, or `PactV3ConsumerModule` like below:
 
 **test/pact/pact.module.ts**
 
-v2
+#### V2 setup
 
 ```typescript
 import { Module } from '@nestjs/common';
@@ -96,8 +102,7 @@ import { AppModule } from '../../src/app.module';
 export class PactModule {}
 ```
 
-
-v3
+#### V3 setup
 
 ```typescript
 import { DynamicModule, Module } from '@nestjs/common';
@@ -116,7 +121,7 @@ import { AppModule } from '../../src/app.module';
 export class PactModule {}
 ```
 
-v4
+#### V4 setup
 
 ```typescript
 import { DynamicModule, Module } from '@nestjs/common';
@@ -139,7 +144,7 @@ Yay, now let's create the test file! let's call it `my-test.spec.ts`
 
 **test/pact/my-test.spec.ts**
 
-v2
+#### V2 test
 
 ```typescript
 import { PactV2 } from '@pact-foundation/pact';
@@ -182,7 +187,7 @@ describe('Pact', () => {
 });
 ```
 
-v3
+#### V3 test
 
 ```typescript
 import { PactV3 } from '@pact-foundation/pact';
@@ -225,7 +230,7 @@ describe('Pact', () => {
 });
 ```
 
-v4
+#### V4 test
 
 ```typescript
 import { Pact } from '@pact-foundation/pact';
