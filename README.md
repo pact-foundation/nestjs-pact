@@ -31,6 +31,7 @@
     - [V2 test](#v2-test)
     - [V3 test](#v3-test)
     - [V4 test](#v4-test)
+  - [Publishing Pacts](#publishing-pacts)
   - [Provider](#provider)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -279,7 +280,36 @@ describe('Pact', () => {
 });
 ```
 
-Now let's look at the Provider setup!
+### Publishing Pacts
+
+Publishing pacts to a Pact Broker is done outside of this library using the [`@pact-foundation/pact-cli`](https://github.com/pact-foundation/pact-cli) npm package, which wraps the Pact CLI binaries.
+
+Install the CLI as a dev dependency:
+
+```bash
+npm i -D @pact-foundation/pact-cli
+```
+
+Then publish your pacts from your CI pipeline:
+
+```bash
+npx pact-broker publish ./pacts \
+  --broker-base-url=https://your-broker.example.com \
+  --consumer-app-version=$(git rev-parse HEAD) \
+  --branch=$(git rev-parse --abbrev-ref HEAD)
+```
+
+Or add it as a `package.json` script:
+
+```json
+{
+  "scripts": {
+    "pact:publish": "pact-broker publish ./pacts --broker-base-url=$PACT_BROKER_URL --consumer-app-version=$GIT_COMMIT --branch=$GIT_BRANCH"
+  }
+}
+```
+
+Publishing is typically only done in CI — not locally. See the [Pact CLI docs](https://docs.pact.io/pact_broker/publishing_and_retrieving_pacts) for all available options.
 
 ### Provider
 
