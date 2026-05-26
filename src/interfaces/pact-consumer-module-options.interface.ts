@@ -1,26 +1,21 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
 
 import { PactOptions, PactV2Options, PactV3Options } from '@pact-foundation/pact';
-import { PublisherOptions } from '@pact-foundation/pact-cli';
 
 export type PactConsumerOptions = Omit<PactOptions, 'consumer' | 'provider'>;
 export type PactV2ConsumerOptions = Omit<PactV2Options, 'consumer' | 'provider'>;
 export type PactV3ConsumerOptions = Omit<PactV3Options, 'consumer' | 'provider'>;
-export type PactPublicationOptions = PublisherOptions;
 
 export interface PactConsumerOverallOptions {
   consumer: PactConsumerOptions;
-  publication?: PactPublicationOptions;
 }
 
 export interface PactV2ConsumerOverallOptions {
   consumer: PactV2ConsumerOptions;
-  publication?: PactPublicationOptions;
 }
 
 export interface PactV3ConsumerOverallOptions {
   consumer: PactV3ConsumerOptions;
-  publication?: PactPublicationOptions;
 }
 
 export interface PactConsumerOptionsFactory {

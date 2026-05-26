@@ -62,7 +62,7 @@ Like the nature of Pact, this package is for testing purposes only.
 If you are not familiar with Pact, Pact is fast, easy and reliable testing framework for integrating web apps, APIs and microservices.
 Read more on [Pact official website](https://pact.io/)
 
-There are two main modules suggested; one for the `Provider` role (`Verifier`), and one for the `Consumer` role (creating Pact files and publish), each loaded separately.
+There are two main modules suggested; one for the `Provider` role (`Verifier`), and one for the `Consumer` role (creating Pact files), each loaded separately.
 Of course, you can also use both modules and play the role of `Consumer` and `Provider` at the same time.
 
 ## Introduction
@@ -279,46 +279,7 @@ describe('Pact', () => {
 });
 ```
 
-Now let's look at how we can publish the pacts created from the test file to a Pact broker!
-
-**test/pact/publish-pacts.ts**
-
-```typescript
-import { NestFactory } from '@nestjs/core';
-import { Logger, LoggerService } from '@nestjs/common';
-import { Publisher } from '@pact-foundation/pact-cli';
-import { PactModuleProviders } from 'nestjs-pact';
-import { PactModule } from '@test/pact/pact.module';
-
-(async () => {
-  const app = await NestFactory.createApplicationContext(PactModule);
-
-  const publisher: Publisher = app.get(PactModuleProviders.PactPublisher);
-  const logger: LoggerService = app.get(Logger);
-
-  if (process.env.CI !== 'true') {
-    logger.log('Skipping Pact publish as not on CI');
-    process.exit(0);
-  }
-
-  try {
-    await publisher.publishPacts();
-
-    logger.log('Pact contract publishing complete!');
-    logger.log('');
-    logger.log('Head over to [https://test.pact.dius.com.au/ and login with](https://test.pactflow.io/login?code=98f7810e-c7dc-493b-9c3d-7849952f1d9a&utm_medium=web&utm_source=nestjs-pact-readme)');
-    logger.log('to see your published contracts.');
-  } catch (e) {
-    logger.error('Pact contract publishing failed: ', e);
-  }
-})();
-```
-
-`npx ts-node test/pact/publish-pacts.ts`
-
-Run the file and you are good to go :)
-
-Note: in your `tsconfig.json` file make sure you set `allowJs` to `true` in order to run the file
+Now let's look at the Provider setup!
 
 ### Provider
 
