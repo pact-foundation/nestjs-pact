@@ -5,7 +5,6 @@ import {
   PactConsumerOverallOptions,
 } from '../interfaces/pact-consumer-module-options.interface';
 import { PactFactory } from '../services/pact-factory.service';
-import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
 import { PactConsumerModule } from './pact-consumer.module';
 
@@ -14,11 +13,6 @@ describe("Given a 'PactConsumerModule' module", () => {
     consumer: {
       host: 'http://beverly-hills.com',
       port: 90210,
-    },
-    publication: {
-      pactFilesOrDirs: ['./'],
-      pactBroker: 'snoop-dog',
-      consumerVersion: 'california-2.0',
     },
   };
 
@@ -41,11 +35,6 @@ describe("Given a 'PactConsumerModule' module", () => {
       const pactFactory = moduleRef.get(PactFactory);
       expect(pactFactory).toBeDefined();
     });
-
-    test('then provide Publisher provider', async () => {
-      const publisher = moduleRef.get(PactModuleProviders.PactPublisher);
-      expect(publisher).toBeDefined();
-    });
   });
 
   describe("when calling the 'registerAsync' method", () => {
@@ -66,11 +55,6 @@ describe("Given a 'PactConsumerModule' module", () => {
         const pactFactory = moduleRef.get(PactFactory);
         expect(pactFactory).toBeDefined();
       });
-
-      test('then provide Publisher provider', async () => {
-        const publisher = moduleRef.get(PactModuleProviders.PactPublisher);
-        expect(publisher).toBeDefined();
-      });
     });
 
     describe("and the 'useClass' option is used", () => {
@@ -89,11 +73,6 @@ describe("Given a 'PactConsumerModule' module", () => {
       test('then provide PactFactory service', async () => {
         const pactFactory = moduleRef.get(PactFactory);
         expect(pactFactory).toBeDefined();
-      });
-
-      test('then provide Publisher provider', async () => {
-        const publisher = moduleRef.get(PactModuleProviders.PactPublisher);
-        expect(publisher).toBeDefined();
       });
     });
   });

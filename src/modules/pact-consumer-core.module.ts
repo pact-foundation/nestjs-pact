@@ -15,27 +15,25 @@ import { PactProvider, PactV2Provider, PactV3Provider } from '../providers/pact.
 import { PactFactory, PactV2Factory, PactV3Factory } from '../services/pact-factory.service';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 import { ProviderFactory } from '../common/provider-factory';
-import { PactPublisherProvider } from '../providers/pact-publisher.provider';
 
 @Module({})
 export class PactConsumerCoreModule {
   public static register(options: PactConsumerOverallOptions): DynamicModule {
     const consumerOptProvider = ProviderFactory.create(PactModuleProviders.ConsumerOptions, options.consumer);
-    const publisherOptProvider = ProviderFactory.create(PactModuleProviders.PublicationOptions, options.publication);
 
     return {
       module: PactConsumerCoreModule,
-      exports: [PactFactory, PactPublisherProvider],
-      providers: [consumerOptProvider, publisherOptProvider, PactProvider, PactPublisherProvider, PactFactory],
+      exports: [PactFactory],
+      providers: [consumerOptProvider, PactProvider, PactFactory],
     };
   }
 
   public static registerAsync(options: PactConsumerModuleAsyncOptions): DynamicModule {
     return {
       module: PactConsumerCoreModule,
-      exports: [PactFactory, PactPublisherProvider],
+      exports: [PactFactory],
       imports: options.imports,
-      providers: [...this.createAsyncProviders(options), PactProvider, PactPublisherProvider, PactFactory],
+      providers: [...this.createAsyncProviders(options), PactProvider, PactFactory],
     };
   }
 
@@ -66,14 +64,6 @@ export class PactConsumerCoreModule {
           },
           inject: options.inject || [],
         },
-        {
-          provide: PactModuleProviders.PublicationOptions,
-          useFactory: async () => {
-            const { publication } = await options.useFactory();
-            return publication;
-          },
-          inject: options.inject || [],
-        },
       ];
     }
 
@@ -89,15 +79,6 @@ export class PactConsumerCoreModule {
         },
         inject,
       },
-      {
-        provide: PactModuleProviders.PublicationOptions,
-        useFactory: async (optionsFactory: PactConsumerOptionsFactory) => {
-          const { publication } = await optionsFactory.createPactConsumerOptions();
-
-          return publication;
-        },
-        inject,
-      },
     ];
   }
 }
@@ -106,21 +87,20 @@ export class PactConsumerCoreModule {
 export class PactV2ConsumerCoreModule {
   public static register(options: PactV2ConsumerOverallOptions): DynamicModule {
     const consumerOptProvider = ProviderFactory.create(PactModuleProviders.ConsumerOptions, options.consumer);
-    const publisherOptProvider = ProviderFactory.create(PactModuleProviders.PublicationOptions, options.publication);
 
     return {
       module: PactV2ConsumerCoreModule,
-      exports: [PactV2Factory, PactPublisherProvider],
-      providers: [consumerOptProvider, publisherOptProvider, PactV2Provider, PactPublisherProvider, PactV2Factory],
+      exports: [PactV2Factory],
+      providers: [consumerOptProvider, PactV2Provider, PactV2Factory],
     };
   }
 
   public static registerAsync(options: PactV2ConsumerModuleAsyncOptions): DynamicModule {
     return {
       module: PactV2ConsumerCoreModule,
-      exports: [PactV2Factory, PactPublisherProvider],
+      exports: [PactV2Factory],
       imports: options.imports,
-      providers: [...this.createAsyncProviders(options), PactV2Provider, PactPublisherProvider, PactV2Factory],
+      providers: [...this.createAsyncProviders(options), PactV2Provider, PactV2Factory],
     };
   }
 
@@ -151,14 +131,6 @@ export class PactV2ConsumerCoreModule {
           },
           inject: options.inject || [],
         },
-        {
-          provide: PactModuleProviders.PublicationOptions,
-          useFactory: async () => {
-            const { publication } = await options.useFactory();
-            return publication;
-          },
-          inject: options.inject || [],
-        },
       ];
     }
 
@@ -174,15 +146,6 @@ export class PactV2ConsumerCoreModule {
         },
         inject,
       },
-      {
-        provide: PactModuleProviders.PublicationOptions,
-        useFactory: async (optionsFactory: PactV2ConsumerOptionsFactory) => {
-          const { publication } = await optionsFactory.createPactV2ConsumerOptions();
-
-          return publication;
-        },
-        inject,
-      },
     ];
   }
 }
@@ -191,21 +154,20 @@ export class PactV2ConsumerCoreModule {
 export class PactV3ConsumerCoreModule {
   public static register(options: PactV3ConsumerOverallOptions): DynamicModule {
     const consumerOptProvider = ProviderFactory.create(PactModuleProviders.ConsumerOptions, options.consumer);
-    const publisherOptProvider = ProviderFactory.create(PactModuleProviders.PublicationOptions, options.publication);
 
     return {
       module: PactV3ConsumerCoreModule,
-      exports: [PactV3Factory, PactPublisherProvider],
-      providers: [consumerOptProvider, publisherOptProvider, PactV3Provider, PactPublisherProvider, PactV3Factory],
+      exports: [PactV3Factory],
+      providers: [consumerOptProvider, PactV3Provider, PactV3Factory],
     };
   }
 
   public static registerAsync(options: PactV3ConsumerModuleAsyncOptions): DynamicModule {
     return {
       module: PactV3ConsumerCoreModule,
-      exports: [PactV3Factory, PactPublisherProvider],
+      exports: [PactV3Factory],
       imports: options.imports,
-      providers: [...this.createAsyncProviders(options), PactV3Provider, PactPublisherProvider, PactV3Factory],
+      providers: [...this.createAsyncProviders(options), PactV3Provider, PactV3Factory],
     };
   }
 
@@ -236,14 +198,6 @@ export class PactV3ConsumerCoreModule {
           },
           inject: options.inject || [],
         },
-        {
-          provide: PactModuleProviders.PublicationOptions,
-          useFactory: async () => {
-            const { publication } = await options.useFactory();
-            return publication;
-          },
-          inject: options.inject || [],
-        },
       ];
     }
 
@@ -256,15 +210,6 @@ export class PactV3ConsumerCoreModule {
           const { consumer } = await optionsFactory.createPactV3ConsumerOptions();
 
           return consumer;
-        },
-        inject,
-      },
-      {
-        provide: PactModuleProviders.PublicationOptions,
-        useFactory: async (optionsFactory: PactV3ConsumerOptionsFactory) => {
-          const { publication } = await optionsFactory.createPactV3ConsumerOptions();
-
-          return publication;
         },
         inject,
       },
