@@ -816,53 +816,6 @@
   dependencies:
     consola "^3.2.3"
 
-"@pact-foundation/pact-cli-darwin-arm64@16.1.4":
-  version "16.1.4"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-cli-darwin-arm64/-/pact-cli-darwin-arm64-16.1.4.tgz#277d2f0f417971497c3f76f4c15da049c92931af"
-  integrity sha512-oMM9oTEgBjqY0G4P7HY4GnP54QJSe0DGsSCUbOVfAkBBxsPqxKGVqJIQ5zwxNgpTkE+PXva0gQc9bEdS64VX7w==
-
-"@pact-foundation/pact-cli-darwin-x64@16.1.4":
-  version "16.1.4"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-cli-darwin-x64/-/pact-cli-darwin-x64-16.1.4.tgz#330d2b9bb9e12fc94f6cf71a3342428ef7babcae"
-  integrity sha512-nlJKqBphLAuxKPDZFuVHbyPzFo2OOaxiGQ1wo/ivS/aHCV59kfqF/Y4TL3AA6TVVm2IopurxpZ5oPC21WUERsw==
-
-"@pact-foundation/pact-cli-linux-arm64@16.1.4":
-  version "16.1.4"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-cli-linux-arm64/-/pact-cli-linux-arm64-16.1.4.tgz#d72790e2aca8e34e738f55ecd95771cdf0b08bf5"
-  integrity sha512-zsF8LdAiGPn/4bfIDlIe/NkpXRgzE7VIAmVctQV5Y5WzR6laiGRwL7yrO0LUXfP3K+GSrP+bU/LKpjdiWNXd7A==
-
-"@pact-foundation/pact-cli-linux-x64@16.1.4":
-  version "16.1.4"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-cli-linux-x64/-/pact-cli-linux-x64-16.1.4.tgz#6041c554cba42c44b597d8bd453939f3d915cba1"
-  integrity sha512-H4Ma/2CJRsN+rRQN980iNgoPyTcgXMF9Uf55SPmiwwWcmfbZavxiBlOQoAiMM2+YPC4c47i2EW7au8EW/1jOCg==
-
-"@pact-foundation/pact-cli-windows-x64@16.1.4":
-  version "16.1.4"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-cli-windows-x64/-/pact-cli-windows-x64-16.1.4.tgz#8cca40c4ef45f6e957720232fdbbdc5eca8a0ab8"
-  integrity sha512-wn79XtC+GQqBmGxjGpRvGqO4TF3H6VDmDy7FjZhXFsT5mfByEmujZRtYIrE4EeS+1PdIM2l86yT88+iT0dDV3Q==
-
-"@pact-foundation/pact-cli@^16.1.4":
-  version "16.1.4"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-cli/-/pact-cli-16.1.4.tgz#ad20048678df0699b078a59237ee60cf8f7d724e"
-  integrity sha512-kJ9ZZLLtBfRzpLM2HfkEait1RbKbDo7mVKZJzMFfdZUGgysRc97tkev8gBZoU+uJZh+n6RgAo4q2yTAHaZaiAw==
-  dependencies:
-    chalk "4.1.2"
-    check-types "11.2.3"
-    cross-spawn "7.0.6"
-    mkdirp "3.0.1"
-    needle "^3.3.1"
-    pino "^9.7.0"
-    pino-pretty "^13.0.0"
-    promise-timeout "1.3.0"
-    rimraf "4.4.1"
-    underscore "1.13.7"
-  optionalDependencies:
-    "@pact-foundation/pact-cli-darwin-arm64" "16.1.4"
-    "@pact-foundation/pact-cli-darwin-x64" "16.1.4"
-    "@pact-foundation/pact-cli-linux-arm64" "16.1.4"
-    "@pact-foundation/pact-cli-linux-x64" "16.1.4"
-    "@pact-foundation/pact-cli-windows-x64" "16.1.4"
-
 "@pact-foundation/pact-core-darwin-arm64@17.0.0":
   version "17.0.0"
   resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-darwin-arm64/-/pact-core-darwin-arm64-17.0.0.tgz#a6d5417a36691704372eba9c312fe8487dc27f7f"
@@ -2814,15 +2767,6 @@ create-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/create-require/-/create-require-1.1.1.tgz"
 
-cross-spawn@7.0.6:
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.6.tgz#8a58fe78f00dcd70c370451759dfbfaf03e8ee9f"
-  integrity sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==
-  dependencies:
-    path-key "^3.1.0"
-    shebang-command "^2.0.0"
-    which "^2.0.1"
-
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-5.1.0.tgz"
@@ -4230,16 +4174,6 @@ glob@^10.3.7:
     minimatch "^9.0.1"
     minipass "^5.0.0 || ^6.0.2 || ^7.0.0"
     path-scurry "^1.10.1"
-
-glob@^9.2.0:
-  version "9.3.5"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-9.3.5.tgz#ca2ed8ca452781a3009685607fdf025a899dfe21"
-  integrity sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==
-  dependencies:
-    fs.realpath "^1.0.0"
-    minimatch "^8.0.2"
-    minipass "^4.2.4"
-    path-scurry "^1.6.1"
 
 global-dirs@^0.1.0, global-dirs@^0.1.1:
   version "0.1.1"
@@ -5933,11 +5867,6 @@ lowercase-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/lowercase-keys/-/lowercase-keys-2.0.0.tgz"
 
-lru-cache@^10.2.0:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.3.tgz#410fc8a17b70e598013df257c2446b7f3383f119"
-  integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
-
 lru-cache@^4.0.1:
   version "4.1.5"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-4.1.5.tgz"
@@ -6108,13 +6037,6 @@ minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^8.0.2:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-8.0.4.tgz#847c1b25c014d4e9a7f68aaf63dedd668a626229"
-  integrity sha512-W0Wvr9HyFXZRGIDgCicunpQ299OKXs9RgZfaukz4qAW/pJhcpUfupc9c+OObPOFueNy8VSrZgEmDtk6Kh4WzDA==
-  dependencies:
-    brace-expansion "^2.0.1"
-
 minimatch@^9.0.1:
   version "9.0.3"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-9.0.3.tgz"
@@ -6148,11 +6070,6 @@ minipass@^2.3.5, minipass@^2.6.0, minipass@^2.9.0:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
 
-minipass@^4.2.4:
-  version "4.2.8"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-4.2.8.tgz#f0010f64393ecfc1d1ccb5f582bcaf45f48e1a3a"
-  integrity sha512-fNzuVyifolSLFL4NzpF+wEF4qrgqaaKX0haXPQEdQ7NKAN+WecoKMHV09YcuL/DHxrUsYQOK3MiuDf7Ip2OXfQ==
-
 "minipass@^5.0.0 || ^6.0.2 || ^7.0.0":
   version "7.0.4"
   resolved "https://registry.npmjs.org/minipass/-/minipass-7.0.4.tgz"
@@ -6177,11 +6094,6 @@ mississippi@^3.0.0:
     pumpify "^1.3.3"
     stream-each "^1.1.0"
     through2 "^2.0.0"
-
-mkdirp@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-3.0.1.tgz#e44e4c5607fb279c168241713cc6e0fea9adcb50"
-  integrity sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==
 
 mkdirp@^0.5.1, mkdirp@^0.5.5, mkdirp@~0.5.0:
   version "0.5.6"
@@ -6229,14 +6141,6 @@ natural-compare-lite@^1.4.0:
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
-
-needle@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-3.3.1.tgz#63f75aec580c2e77e209f3f324e2cdf3d29bd049"
-  integrity sha512-6k0YULvhpw+RoLNiQCRKOl09Rv1dPLr8hHnVjHqdolKwDrdNyk+Hmrthi4lIGPPz3r39dLx0hsF5s40sZ3Us4Q==
-  dependencies:
-    iconv-lite "^0.6.3"
-    sax "^1.2.4"
 
 negotiator@^1.0.0:
   version "1.0.0"
@@ -6930,14 +6834,6 @@ path-scurry@^1.10.1:
     lru-cache "^9.1.1 || ^10.0.0"
     minipass "^5.0.0 || ^6.0.2 || ^7.0.0"
 
-path-scurry@^1.6.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/path-scurry/-/path-scurry-1.11.1.tgz#7960a668888594a0720b12a911d1a742ab9f11d2"
-  integrity sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==
-  dependencies:
-    lru-cache "^10.2.0"
-    minipass "^5.0.0 || ^6.0.2 || ^7.0.0"
-
 path-to-regexp@8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-8.2.0.tgz#73990cc29e57a3ff2a0d914095156df5db79e8b4"
@@ -6984,25 +6880,6 @@ pino-abstract-transport@^2.0.0:
   dependencies:
     split2 "^4.0.0"
 
-pino-pretty@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/pino-pretty/-/pino-pretty-13.0.0.tgz#21d57fe940e34f2e279905d7dba2d7e2c4f9bf17"
-  integrity sha512-cQBBIVG3YajgoUjo1FdKVRX6t9XPxwB9lcNJVD5GCnNM4Y6T12YYx8c6zEejxQsU0wrg9TwmDulcE9LR7qcJqA==
-  dependencies:
-    colorette "^2.0.7"
-    dateformat "^4.6.3"
-    fast-copy "^3.0.2"
-    fast-safe-stringify "^2.1.1"
-    help-me "^5.0.0"
-    joycon "^3.1.1"
-    minimist "^1.2.6"
-    on-exit-leak-free "^2.1.0"
-    pino-abstract-transport "^2.0.0"
-    pump "^3.0.0"
-    secure-json-parse "^2.4.0"
-    sonic-boom "^4.0.1"
-    strip-json-comments "^3.1.1"
-
 pino-pretty@^13.1.1:
   version "13.1.1"
   resolved "https://registry.yarnpkg.com/pino-pretty/-/pino-pretty-13.1.1.tgz#70130b9ff3737c8757f53e42d69e9f96835142b8"
@@ -7027,7 +6904,7 @@ pino-std-serializers@^7.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-7.0.0.tgz#7c625038b13718dbbd84ab446bd673dc52259e3b"
   integrity sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==
 
-pino@^9.7.0, pino@^9.9.0:
+pino@^9.9.0:
   version "9.13.1"
   resolved "https://registry.yarnpkg.com/pino/-/pino-9.13.1.tgz#55f0230cf691af42510c6dee08eeaca7319418ea"
   integrity sha512-Szuj+ViDTjKPQYiKumGmEn3frdl+ZPSdosHyt9SnUevFosOkMY2b7ipxlEctNKPmMD/VibeBI+ZcZCJK+4DPuw==
@@ -7114,11 +6991,6 @@ promise-retry@^1.1.1:
   dependencies:
     err-code "^1.0.0"
     retry "^0.10.0"
-
-promise-timeout@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/promise-timeout/-/promise-timeout-1.3.0.tgz#d1c78dd50a607d5f0a5207410252a3a0914e1014"
-  integrity sha512-5yANTE0tmi5++POym6OgtFmwfDvOXABD9oj/jLQr5GPEyuNEb7jH4wbbANJceJid49jwhi1RddxnhnEAb/doqg==
 
 prompts@^2.0.1:
   version "2.4.2"
@@ -7643,13 +7515,6 @@ rfdc@^1.3.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/rfdc/-/rfdc-1.3.0.tgz"
 
-rimraf@4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-4.4.1.tgz#bd33364f67021c5b79e93d7f4fa0568c7c21b755"
-  integrity sha512-Gk8NlF062+T9CqNGn6h4tls3k6T1+/nXdOcSZVikNVtlRdYpA7wRJJMoXmuvOnLW844rPjdQ7JgXCYM6PPC/og==
-  dependencies:
-    glob "^9.2.0"
-
 rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.2, rimraf@^2.6.3, rimraf@^2.7.1:
   version "2.7.1"
   resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.7.1.tgz"
@@ -7759,16 +7624,6 @@ safe-stable-stringify@^2.3.1:
 "safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
-
-sax@^1.2.4:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-1.4.1.tgz#44cc8988377f126304d3b3fc1010c733b929ef0f"
-  integrity sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==
-
-secure-json-parse@^2.4.0:
-  version "2.7.0"
-  resolved "https://registry.npmjs.org/secure-json-parse/-/secure-json-parse-2.7.0.tgz"
-  integrity sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==
 
 secure-json-parse@^4.0.0:
   version "4.1.0"
