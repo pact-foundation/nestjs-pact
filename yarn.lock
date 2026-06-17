@@ -816,67 +816,67 @@
   dependencies:
     consola "^3.2.3"
 
-"@pact-foundation/pact-core-darwin-arm64@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-darwin-arm64/-/pact-core-darwin-arm64-17.0.0.tgz#a6d5417a36691704372eba9c312fe8487dc27f7f"
-  integrity sha512-OSAwR7O4Nk6rHYhon9KUyIJHJuLaJmSughire74KZu7YbM/F0nZhlxGEMN5yxRcKgbDGHtHDBkmsJ44omGsvdw==
+"@pact-foundation/pact-core-darwin-arm64@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-darwin-arm64/-/pact-core-darwin-arm64-19.2.0.tgz#49555826391a08c8ff065b9263160b2cd14c99f2"
+  integrity sha512-cQvvWfJKS7iMzkunzh/kdgmyVLhAxyr/BQ8fOnMco2M/1+GHR+sOXvhrR1tes+NAYd1xjE3fbg1K2Flno8aDBw==
 
-"@pact-foundation/pact-core-darwin-x64@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-darwin-x64/-/pact-core-darwin-x64-17.0.0.tgz#48764fcb24d40d5c60037ab367edd40612da1d34"
-  integrity sha512-UHDgCkZPSeUZMracPysHAfMsUBWpah9zZJfwPvGUkjOjHvrnRGP0y98wP7PmbXiJxbxHqaaV7EHRsLjaFdS50A==
+"@pact-foundation/pact-core-darwin-x64@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-darwin-x64/-/pact-core-darwin-x64-19.2.0.tgz#8bae182b0bcb44dafb3677423367d37a7f80641b"
+  integrity sha512-UltPXDZ+h1r3JqgIpEBP16bQzB90otd1QbcoeM3XakF9khCrYhW4y9llSuaosyqPFYwCk+mLaZTl/4iitJJaow==
 
-"@pact-foundation/pact-core-linux-arm64-glibc@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-arm64-glibc/-/pact-core-linux-arm64-glibc-17.0.0.tgz#f47ca37e0aab2ccde57175b7811d06bf46fade5a"
-  integrity sha512-akoL9agQklL8iGxqr4yI4X11ufjeYxEGvCtiXhDH2KFoB60MsyTOeD9SGfM90cQ/W/PjusOKHmSlz1hPWRX9Vw==
+"@pact-foundation/pact-core-linux-arm64-glibc@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-arm64-glibc/-/pact-core-linux-arm64-glibc-19.2.0.tgz#6e0a82856ac04c1057dc230ea9be55fc40bf2ddb"
+  integrity sha512-amiv4COurH1FRa7DSH3ks4UPQCb5J3x4GKrArf8UsTOkNhVGFUWVl83LOELj9Gtk67GwJ96iF7/fQps8I/iFIA==
 
-"@pact-foundation/pact-core-linux-arm64-musl@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-arm64-musl/-/pact-core-linux-arm64-musl-17.0.0.tgz#0f8f75437d4fb37c8a2c312d4445c810c5ccead8"
-  integrity sha512-kjDukgS7hjfb/PB68CHNCHBnG7kID3lLq3HirGp2vJ7RfqC8IOD18KTTSaHJoi48ofILx1M3Vb8zODFmxVB1pQ==
+"@pact-foundation/pact-core-linux-arm64-musl@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-arm64-musl/-/pact-core-linux-arm64-musl-19.2.0.tgz#68a3bb49feb2f47e6b8db8d8f031b8bd2efd9930"
+  integrity sha512-tGWF7dP72Ho1A1PApyUqUMRI/e+gfbPxfaXxwWMXNh8JLK2jQQnP4bWymGwHQ4vxL7wn8ayx8I5y6x1vk/2+rA==
 
-"@pact-foundation/pact-core-linux-x64-glibc@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-x64-glibc/-/pact-core-linux-x64-glibc-17.0.0.tgz#4a81671577db91f4e78e0a4e64b7a65ccb53e868"
-  integrity sha512-AVYwU0KRmjBcHVgQz9n15D4R8BQSgK4ophzYHG9qC8DVmQ1zM3VEt/e8JcRPyd8OifK3OMJpcvvFeIRgh/s5uQ==
+"@pact-foundation/pact-core-linux-x64-glibc@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-x64-glibc/-/pact-core-linux-x64-glibc-19.2.0.tgz#9f5ea4b82d7d348a6980de04ca49c884e4aed88f"
+  integrity sha512-/ZNuWKuFJSBRZH09t7FXqKLy5koCaMIZ4RdbockLYlNo8uWF2ALfRCllj+SbXPLK+T+lVnBrs5s94X2cu4Rc7A==
 
-"@pact-foundation/pact-core-linux-x64-musl@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-x64-musl/-/pact-core-linux-x64-musl-17.0.0.tgz#f51850a7b05c9847c48c3c5f7b14b10d88a84574"
-  integrity sha512-3969TiqWc6r6qwaX/faNoEDCowhFCIygf5jOECDUfHX9uysS9qqZP+O7qMfGT6t0E3FIUqKS9G1bMln5e68LTQ==
+"@pact-foundation/pact-core-linux-x64-musl@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-linux-x64-musl/-/pact-core-linux-x64-musl-19.2.0.tgz#a752777dc8e88d9fb0145f0b1525834e15996c5e"
+  integrity sha512-n0m39CzVkq8J2alir1redm0rAdUVQzkKJqYBQdRmhEIa+QeGjUrJq+gmakUysoJxfSY4UthnJ9jS8SoyiZ+k6A==
 
-"@pact-foundation/pact-core-windows-x64@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-windows-x64/-/pact-core-windows-x64-17.0.0.tgz#b9b8691d9e2c60a1ec32ecbef3031d2a53b8b67e"
-  integrity sha512-Oa9S1YEfaSO5wmxFw+3F6Jbvgy0CH3Wn1qcm0tGx+7pAPNj5SOp0k0myF2OC+Xg0+iC5Q6DXfS666oNHgZlEVQ==
+"@pact-foundation/pact-core-windows-x64@19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core-windows-x64/-/pact-core-windows-x64-19.2.0.tgz#6f9daaf5b0259b4465aa510809f447c5e79cab91"
+  integrity sha512-WZSDBL1Sn8y5+YJTK+HDiS/Fn9th1M4QJW2dflQ8UFwoaIh6yb0TrJjtuWbDGIwNeD4Sv8CJ5jJOf1nyNjFLfg==
 
-"@pact-foundation/pact-core@^17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core/-/pact-core-17.0.0.tgz#ff4bb871e530986304eaef11ebc9965318ed1279"
-  integrity sha512-H6uGvjIgiT1vcGFhFwF0wCCbX9t3w5/d+Q3UGrHSw0/hOEQdGcETSeMUIheW9oCvm9qkxPBV5YkwUwmDIUXnYg==
+"@pact-foundation/pact-core@^19.2.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-core/-/pact-core-19.2.0.tgz#1af3ef7bf9404330a1b2913819cfc0b557c10d52"
+  integrity sha512-7EB2e850hmBzGnwOYTRj4TCFCJQa9zaOy53bK+ybzEDx801olf0gVlYqMYHt1EsHUZzmtS5uDybpr9UMcZQxgg==
   dependencies:
     check-types "11.2.3"
     detect-libc "^2.0.3"
     node-gyp-build "^4.6.0"
-    pino "^9.9.0"
+    pino "^10.0.0"
     pino-pretty "^13.1.1"
-    underscore "1.13.7"
+    underscore "1.13.8"
   optionalDependencies:
-    "@pact-foundation/pact-core-darwin-arm64" "17.0.0"
-    "@pact-foundation/pact-core-darwin-x64" "17.0.0"
-    "@pact-foundation/pact-core-linux-arm64-glibc" "17.0.0"
-    "@pact-foundation/pact-core-linux-arm64-musl" "17.0.0"
-    "@pact-foundation/pact-core-linux-x64-glibc" "17.0.0"
-    "@pact-foundation/pact-core-linux-x64-musl" "17.0.0"
-    "@pact-foundation/pact-core-windows-x64" "17.0.0"
+    "@pact-foundation/pact-core-darwin-arm64" "19.2.0"
+    "@pact-foundation/pact-core-darwin-x64" "19.2.0"
+    "@pact-foundation/pact-core-linux-arm64-glibc" "19.2.0"
+    "@pact-foundation/pact-core-linux-arm64-musl" "19.2.0"
+    "@pact-foundation/pact-core-linux-x64-glibc" "19.2.0"
+    "@pact-foundation/pact-core-linux-x64-musl" "19.2.0"
+    "@pact-foundation/pact-core-windows-x64" "19.2.0"
 
 "@pact-foundation/pact@^16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-16.0.0.tgz#ef07273808d6f2bcc8425eb70e2f5896cf29152a"
-  integrity sha512-QPjvu40M0vX5L6boUIPZt8JGsA+eL6G48XTtDAUGKA9wlgIjShaVF4bdkDGZmex3WLb1aht4P5BG+DGguR7NZQ==
+  version "16.5.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-16.5.0.tgz#fd4805d9cfecc86ea9d791fcaddae5c3e31ee2ed"
+  integrity sha512-9YgmU6fDJGQVYoAm2ez52dyKfQwFzW47GlrT8IAKuzjL6qZVZ9+ael6myeMbQqz7J5lzEGLoUi2PMkBFFgQxRw==
   dependencies:
-    "@pact-foundation/pact-core" "^17.0.0"
+    "@pact-foundation/pact-core" "^19.2.0"
     axios "^1.12.2"
     body-parser "^2.2.0"
     chalk "4.1.2"
@@ -884,12 +884,18 @@
     graphql "^16.11.0"
     graphql-tag "^2.12.6"
     http-proxy "^1.18.1"
-    https-proxy-agent "^7.0.6"
+    https-proxy-agent "^9.0.0"
     js-base64 "^3.7.8"
     lodash "^4.17.21"
-    ramda "^0.31.3"
+    ramda "^0.32.0"
     randexp "^0.5.3"
     router "^2.2.0"
+    stack-utils "^2.0.6"
+
+"@pinojs/redact@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pinojs/redact/-/redact-0.4.0.tgz#c3de060dd12640dcc838516aa2a6803cc7b2e9d6"
+  integrity sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -1255,10 +1261,10 @@ agent-base@4, agent-base@^4.3.0:
   dependencies:
     es6-promisify "^5.0.0"
 
-agent-base@^7.1.2:
-  version "7.1.4"
-  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-7.1.4.tgz#e3cd76d4c548ee895d3c3fd8dc1f6c5b9032e7a8"
-  integrity sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ==
+agent-base@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-9.0.0.tgz#ec9efb08314e1e75b0852d74aabf9a387f99834e"
+  integrity sha512-TQf59BsZnytt8GdJKLPfUZ54g/iaUL2OWDSFCCvMOhsHduDQxO8xC4PNeyIkVcA5KwL2phPSv0douC0fgWzmnA==
 
 agent-base@~4.2.1:
   version "4.2.1"
@@ -2862,12 +2868,6 @@ debug@3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@^4.0.0, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
-  version "4.3.4"
-  resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
-  dependencies:
-    ms "2.1.2"
-
 debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
@@ -2880,6 +2880,12 @@ debug@^3.1.0, debug@^3.2.7:
   resolved "https://registry.npmjs.org/debug/-/debug-3.2.7.tgz"
   dependencies:
     ms "^2.1.1"
+
+debug@^4.0.0, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
+  dependencies:
+    ms "2.1.2"
 
 debug@^4.3.5, debug@^4.4.0:
   version "4.4.3"
@@ -4492,13 +4498,14 @@ https-proxy-agent@^2.2.3:
     agent-base "^4.3.0"
     debug "^3.1.0"
 
-https-proxy-agent@^7.0.6:
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz#da8dfeac7da130b05c2ba4b59c9b6cd66611a6b9"
-  integrity sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==
+https-proxy-agent@^9.0.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-9.1.0.tgz#a9f60f79bc1578c37b166dd7f58b6bcb5c57e44b"
+  integrity sha512-ag87y7cJJ9/3+GxFr8Oy4O5faDsGRGnBGsJj/YjOSsSx/5eadKLYTMPlzuR6obgoCDDm0abAAZitXXQkMOPSpA==
   dependencies:
-    agent-base "^7.1.2"
-    debug "4"
+    agent-base "9.0.0"
+    debug "^4.3.4"
+    proxy-agent-negotiate "1.1.0"
 
 human-signals@^2.1.0:
   version "2.1.0"
@@ -6880,6 +6887,13 @@ pino-abstract-transport@^2.0.0:
   dependencies:
     split2 "^4.0.0"
 
+pino-abstract-transport@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/pino-abstract-transport/-/pino-abstract-transport-3.0.0.tgz#b21e5f33a297e8c4c915c62b3ce5dd4a87a52c23"
+  integrity sha512-wlfUczU+n7Hy/Ha5j9a/gZNy7We5+cXp8YL+X+PG8S0KXxw7n/JXA3c46Y0zQznIJ83URJiwy7Lh56WLokNuxg==
+  dependencies:
+    split2 "^4.0.0"
+
 pino-pretty@^13.1.1:
   version "13.1.1"
   resolved "https://registry.yarnpkg.com/pino-pretty/-/pino-pretty-13.1.1.tgz#70130b9ff3737c8757f53e42d69e9f96835142b8"
@@ -6904,22 +6918,22 @@ pino-std-serializers@^7.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-7.0.0.tgz#7c625038b13718dbbd84ab446bd673dc52259e3b"
   integrity sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==
 
-pino@^9.9.0:
-  version "9.13.1"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-9.13.1.tgz#55f0230cf691af42510c6dee08eeaca7319418ea"
-  integrity sha512-Szuj+ViDTjKPQYiKumGmEn3frdl+ZPSdosHyt9SnUevFosOkMY2b7ipxlEctNKPmMD/VibeBI+ZcZCJK+4DPuw==
+pino@^10.0.0:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-10.3.1.tgz#6552c8f8d8481844c9e452e7bf0be90bff1939ce"
+  integrity sha512-r34yH/GlQpKZbU1BvFFqOjhISRo1MNx1tWYsYvmj6KIRHSPMT2+yHOEb1SG6NMvRoHRF0a07kCOox/9yakl1vg==
   dependencies:
+    "@pinojs/redact" "^0.4.0"
     atomic-sleep "^1.0.0"
     on-exit-leak-free "^2.1.0"
-    pino-abstract-transport "^2.0.0"
+    pino-abstract-transport "^3.0.0"
     pino-std-serializers "^7.0.0"
     process-warning "^5.0.0"
     quick-format-unescaped "^4.0.3"
     real-require "^0.2.0"
     safe-stable-stringify "^2.3.1"
-    slow-redact "^0.3.0"
     sonic-boom "^4.0.1"
-    thread-stream "^3.0.0"
+    thread-stream "^4.0.0"
 
 pirates@^4.0.4:
   version "4.0.5"
@@ -7023,6 +7037,11 @@ proxy-addr@^2.0.7:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
 
+proxy-agent-negotiate@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-agent-negotiate/-/proxy-agent-negotiate-1.1.0.tgz#de7d37aede9d71e74346125d6f484fac8092b615"
+  integrity sha512-N8IBcM3UgCVzz2L2Lqv8DVntDnnC8/hiV4nEDUPkqq72TPUgYWjQc+bdZlBPZK9LzPAvOY//gAt0S0DApoOXWQ==
+
 proxy-from-env@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
@@ -7114,10 +7133,10 @@ qw@~1.0.1:
   resolved "https://registry.yarnpkg.com/qw/-/qw-1.0.2.tgz#0c31a6f810320a91c58b05198679427103b03c4a"
   integrity sha512-1PhZ/iLKwlVNq45dnerTMKFjMof49uqli7/0QsvPNbX5OJ3IZ8msa9lUpvPheVdP+IYYPrf6cOaVil7S35joVA==
 
-ramda@^0.31.3:
-  version "0.31.3"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.31.3.tgz#0f54199ec99a7bd6702277d28d6bf7f93b916bb9"
-  integrity sha512-xKADKRNnqmDdX59PPKLm3gGmk1ZgNnj3k7DryqWwkamp4TJ6B36DdpyKEQ0EoEYmH2R62bV4Q+S0ym2z8N2f3Q==
+ramda@^0.32.0:
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.32.0.tgz#b2116807b59b6b177af7a2ad19b14a3653570e96"
+  integrity sha512-GQWAHhxhxWBWA8oIBr1XahFVjQ9Fic6MK9ikijfd4TZHfE2+urfk+irVlR5VOn48uwMgM+loRRBJd6Yjsbc0zQ==
 
 randexp@^0.5.3:
   version "0.5.3"
@@ -7265,6 +7284,11 @@ real-require@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/real-require/-/real-require-0.2.0.tgz"
   integrity sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==
+
+real-require@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/real-require/-/real-require-1.0.0.tgz#e4f0a3737e8060c513b60c2652c58b8ef56bc8a9"
+  integrity sha512-P4nbQYQfePJxRSmY+v/KINxVucm4NF3p3s7pJveMTtom52FR4YGltUQLB8idDXwDDWW+eYrWDFbuzUnjoWHF7g==
 
 redent@^3.0.0:
   version "3.0.0"
@@ -7880,11 +7904,6 @@ slide@^1.1.6, slide@~1.1.3, slide@~1.1.6:
   version "1.1.6"
   resolved "https://registry.npmjs.org/slide/-/slide-1.1.6.tgz"
 
-slow-redact@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/slow-redact/-/slow-redact-0.3.1.tgz#4cb9ad7011dcba97b8a4b58ce8a5d660243100f6"
-  integrity sha512-NvFvl1GuLZNW4U046Tfi8b26zXo8aBzgCAS2f7yVJR/fArN93mOqSA99cB9uITm92ajSz01bsu1K7SCVVjIMpQ==
-
 smart-buffer@^4.1.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz"
@@ -8009,7 +8028,7 @@ ssri@^6.0.0, ssri@^6.0.1, ssri@^6.0.2:
   dependencies:
     figgy-pudding "^3.5.1"
 
-stack-utils@^2.0.3:
+stack-utils@^2.0.3, stack-utils@^2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/stack-utils/-/stack-utils-2.0.6.tgz"
   dependencies:
@@ -8335,12 +8354,12 @@ text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
 
-thread-stream@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/thread-stream/-/thread-stream-3.1.0.tgz#4b2ef252a7c215064507d4ef70c05a5e2d34c4f1"
-  integrity sha512-OqyPZ9u96VohAyMfJykzmivOrY2wfMSf3C5TtFJVgN+Hm6aj+voFhlK+kZEIv2FBh1X6Xp3DlnCOfEQ3B2J86A==
+thread-stream@^4.0.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/thread-stream/-/thread-stream-4.2.0.tgz#054063e93baab22363d05b784d6c7e439230cac7"
+  integrity sha512-e2zZ96wSChazBsbENf/Pcm/4swHt2cEKQ92rhUjkL9GCKiTDJIaTBenjE/m9DXi0QBmTMDkFDdOomUy20A1tDQ==
   dependencies:
-    real-require "^0.2.0"
+    real-require "^1.0.0"
 
 through2@^2.0.0:
   version "2.0.5"
@@ -8698,10 +8717,10 @@ underscore.string@~2.2.0rc:
   version "2.2.1"
   resolved "https://registry.npmjs.org/underscore.string/-/underscore.string-2.2.1.tgz"
 
-underscore@1.13.7:
-  version "1.13.7"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.7.tgz#970e33963af9a7dda228f17ebe8399e5fbe63a10"
-  integrity sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==
+underscore@1.13.8:
+  version "1.13.8"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.8.tgz#a93a21186c049dbf0e847496dba72b7bd8c1e92b"
+  integrity sha512-DXtD3ZtEQzc7M8m4cXotyHR+FAS18C64asBYY5vqZexfYryNNnDc02W4hKg3rdQuqOYas1jkseX0+nZXjTXnvQ==
 
 unique-filename@^1.1.1:
   version "1.1.1"
