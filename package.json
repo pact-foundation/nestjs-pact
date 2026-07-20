@@ -82,7 +82,7 @@
   "peerDependencies": {
     "@nestjs/common": "7.x || 8.x || 9.x || 10.x || 11.x",
     "@nestjs/core": "7.x || 8.x || 9.x || 10.x || 11.x",
-    "@pact-foundation/pact": "16.x"
+    "@pact-foundation/pact": "16.x || 17.x"
   },
   "dependencies": {
     "get-port": "^5.0.0"
