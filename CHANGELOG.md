@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/omermorad/nestjs-pact/compare/v4.0.0...v4.0.1) (2026-07-20)
+
+
+### Bug Fixes
+
+* **peer-deps:** support pact-js v17 ([#111](https://github.com/omermorad/nestjs-pact/issues/111)) ([c5ab885](https://github.com/omermorad/nestjs-pact/commit/c5ab8859dedc1a41b227d8d673c0be9c8d2bdbe2))
+
 ## [4.0.0](https://github.com/omermorad/nestjs-pact/compare/v3.0.0...v4.0.0) (2026-07-20)
 
 
