@@ -1,3 +1,14 @@
+## [4.0.0](https://github.com/omermorad/nestjs-pact/compare/v3.0.0...v4.0.0) (2026-07-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop @pact-foundation/pact-cli dependency and remove Pact publishing support (#104)
+
+### Features
+
+* drop @pact-foundation/pact-cli dependency and remove Pact publishing support ([#104](https://github.com/omermorad/nestjs-pact/issues/104)) ([27dc8ba](https://github.com/omermorad/nestjs-pact/commit/27dc8bab0b5744fa97251fc7940c279cc028d2c4))
+
 ## [3.0.0](https://github.com/omermorad/nestjs-pact/compare/v2.3.5...v3.0.0) (2025-10-07)
 
 
