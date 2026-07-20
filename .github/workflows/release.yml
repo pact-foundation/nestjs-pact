@@ -3,6 +3,11 @@ on:
   push:
     branches:
       - master
+
+permissions:
+  contents: write
+  id-token: write
+
 jobs:
   main:
     name: Release
@@ -28,18 +33,6 @@ jobs:
       - name: Lint Commit Message
         run: echo $(git log -1 --pretty=format:"%s") | yarn commitlint
 
-      - name: Create .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            @nestjs-pact:registry=https://registry.npmjs.org/
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            FirstName LastName (omer.mroadd@gmail.com, omer.mroadd@gmail.com)=true
-            email=omer.mroadd@gmail.com
-            always-auth=true
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Build
         run: yarn build
 
@@ -47,7 +40,7 @@ jobs:
         run: yarn test
 
       - name: Release
-        uses: cycjimmy/semantic-release-action@v4
+        uses: cycjimmy/semantic-release-action@v6
         with:
           dry_run: false
           semantic_version: 20
@@ -67,3 +60,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
