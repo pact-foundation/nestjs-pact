@@ -1,4 +1,4 @@
-import { ModuleMetadata, Type } from '@nestjs/common';
+import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
 
 import { PactOptions, PactV2Options, PactV3Options } from '@pact-foundation/pact';
 
