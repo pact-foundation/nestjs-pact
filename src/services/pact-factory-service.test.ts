@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { vi } from 'vitest';
 
 import { Pact, PactV2, PactV3 } from '@pact-foundation/pact';
 
@@ -11,7 +12,7 @@ import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
 import { PactFactory, PactV2Factory, PactV3Factory } from './pact-factory.service';
 
-jest.mock('@pact-foundation/pact');
+vi.mock('@pact-foundation/pact', { spy: true });
 
 describe('PactFactory', () => {
   let moduleRef: TestingModule;
