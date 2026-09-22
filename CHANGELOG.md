@@ -1,3 +1,12 @@
+## 4.1.0 (2026-09-22)
+
+* chore(ci): fix trusted publishing ([c0ea354](https://github.com/pact-foundation/nestjs-pact/commit/c0ea354))
+* chore(ci): release workflow OIDC disable ([353ad64](https://github.com/pact-foundation/nestjs-pact/commit/353ad64))
+* chore(deps-dev): bump commitizen from 4.2.6 to 4.3.2 ([517a9ec](https://github.com/pact-foundation/nestjs-pact/commit/517a9ec))
+* chore(deps-dev): bump eslint-config-prettier from 8.5.0 to 10.1.8 (#115) ([5531339](https://github.com/pact-foundation/nestjs-pact/commit/5531339)), closes [#115](https://github.com/pact-foundation/nestjs-pact/issues/115)
+* chore(deps-dev): bump ts-node from 10.9.1 to 10.9.2 (#107) ([9312120](https://github.com/pact-foundation/nestjs-pact/commit/9312120)), closes [#107](https://github.com/pact-foundation/nestjs-pact/issues/107)
+* feat: support npm trusted publishing with build provenance (#110) ([44f3f29](https://github.com/pact-foundation/nestjs-pact/commit/44f3f29)), closes [#110](https://github.com/pact-foundation/nestjs-pact/issues/110) [#109](https://github.com/pact-foundation/nestjs-pact/issues/109)
+
 ## [4.0.1](https://github.com/omermorad/nestjs-pact/compare/v4.0.0...v4.0.1) (2026-07-20)
 
 
