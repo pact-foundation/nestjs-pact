@@ -1,6 +1,6 @@
 {
   "branches": "master",
-  "repositoryUrl": "https://github.com/omermorad/nestjs-pact.git",
+  "repositoryUrl": "https://github.com/pact-foundation/nestjs-pact.git",
   "debug": "true",
   "plugins": [
     [

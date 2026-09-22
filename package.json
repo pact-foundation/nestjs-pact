@@ -19,15 +19,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/omermorad/nestjs-pact.git"
+    "url": "https://github.com/pact-foundation/nestjs-pact.git"
   },
   "bugs": {
-    "url": "https://github.com/omermorad/nestjs-pact/issues"
+    "url": "https://github.com/pact-foundation/nestjs-pact/issues"
   },
   "engines": {
     "node": ">=20"
   },
-  "readme": "https://github.com/omermorad/nestjs-pact/README.md",
+  "readme": "https://github.com/pact-foundation/nestjs-pact/README.md",
   "scripts": {
     "prebuild": "./node_modules/.bin/rimraf dist",
     "build": "tsc -p tsconfig.build.json",
@@ -99,10 +99,12 @@
       "pre-push": "yarn test"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  }
 }
