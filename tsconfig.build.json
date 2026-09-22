@@ -3,6 +3,7 @@
   "compilerOptions": {
     "incremental": false,
     "sourceMap": true,
+    "baseUrl": "./",
     "rootDir": "./src",
     "outDir": "./dist"
   },
@@ -14,7 +15,6 @@
     "index.ts",
     "index.js",
     "index.d.ts",
-    "commitlint.config.js",
-    "vitest.config.ts"
+    "commitlint.config.js"
   ]
 }

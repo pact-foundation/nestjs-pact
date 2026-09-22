@@ -5,11 +5,14 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2017",
+    "resolvePackageJsonExports": true,
     "sourceMap": true,
+    "baseUrl": "./",
     "outDir": "./dist",
     "incremental": false,
     "noImplicitAny": false,
     "strictNullChecks": false,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "types": [
@@ -28,7 +31,6 @@
     "dist",
     "test",
     "env",
-    "coverage",
-    "vitest.config.ts"
+    "coverage"
   ]
 }
