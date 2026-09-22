@@ -1,22 +1,21 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import { vi } from 'vitest';
 
 import { PactProviderOptions } from '../interfaces/pact-provider-module-options.interface';
 import { PactModuleProviders } from '../common/pact-module-providers.enum';
 
 import { PactVerifierService } from './pact-verifier.service';
 
-vi.mock('get-port', () => ({ default: Promise.resolve(1234) }));
+jest.mock('get-port', () => () => Promise.resolve(1234));
 
 describe('PactVerifierService', () => {
   let moduleRef: TestingModule;
   let pactVerifierService: PactVerifierService;
 
   const appMock = {
-    getUrl: vi.fn().mockResolvedValue('http://127.0.0.1:8080'),
-    listen: vi.fn().mockResolvedValueOnce(true),
-    close: vi.fn().mockResolvedValueOnce(true),
+    getUrl: jest.fn().mockResolvedValue('http://127.0.0.1:8080'),
+    listen: jest.fn().mockResolvedValueOnce(true),
+    close: jest.fn().mockResolvedValueOnce(true),
   };
 
   const options: PactProviderOptions = { providerHost: 'http://127.0.0.1:8080' };
@@ -36,7 +35,7 @@ describe('PactVerifierService', () => {
   });
 
   beforeEach(() => {
-    vitest.clearAllMocks();
+    jest.clearAllMocks();
   });
 
   describe('when configuring the providerHost', () => {

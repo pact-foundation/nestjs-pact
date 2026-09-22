@@ -87,5 +87,8 @@
       }
     ],
     "lines-between-class-members": "off"
+  },
+  "env": {
+    "jest": true
   }
 }

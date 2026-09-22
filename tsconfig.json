@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2017",
-    "resolvePackageJsonExports": true,
     "sourceMap": true,
     "baseUrl": "./",
     "outDir": "./dist",
@@ -16,7 +16,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "types": [
-      "node"
+      "node",
+      "jest"
     ],
     "allowJs": true,
     "lib": [
