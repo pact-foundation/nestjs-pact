@@ -1,3 +1,7 @@
+## 4.2.0 (2026-09-22)
+
+* feat: support nestjs v12 / vite upgrade ([3f8c47a](https://github.com/pact-foundation/nestjs-pact/commit/3f8c47a))
+
 ## 4.1.0 (2026-09-22)
 
 * chore(ci): fix trusted publishing ([c0ea354](https://github.com/pact-foundation/nestjs-pact/commit/c0ea354))
