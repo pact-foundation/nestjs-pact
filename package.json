@@ -67,7 +67,7 @@
     "vite": "^8.3.0",
     "vitest": "^5.0.1",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.1",
+    "prettier": "^3.9.9",
     "reflect-metadata": "^0.2.2",
     "rimraf": "^5.0.5",
     "semantic-release-cli": "^5.4.4",
